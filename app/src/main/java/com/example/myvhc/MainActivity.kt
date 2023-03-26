@@ -13,7 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnTest.setOnClickListener {
-            Toast.makeText(this,  "Hello",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,  "Test",Toast.LENGTH_LONG).show()
+
         }
 
     }
