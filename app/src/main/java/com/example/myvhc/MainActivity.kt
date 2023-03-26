@@ -1,5 +1,6 @@
 package com.example.myvhc
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnTest.setOnClickListener {
-            Toast.makeText(this,  "Test",Toast.LENGTH_LONG).show()
-
+            var intent = Intent(this, TestActvity::class.java)
+            startActivity(intent)
         }
 
     }
