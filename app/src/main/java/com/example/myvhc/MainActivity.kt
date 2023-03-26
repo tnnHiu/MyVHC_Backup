@@ -14,9 +14,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnTest.setOnClickListener {
-            var intent = Intent(this, TestActvity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, TestActvity::class.java))
         }
+
+
+
 
     }
 }
