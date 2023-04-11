@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "840382658760",
+    "project_id": "myvhcapp-2a5c6",
+    "storage_bucket": "myvhcapp-2a5c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840382658760:android:90a6f60aac4061e6b84dfd",
+        "android_client_info": {
+          "package_name": "com.example.myvhc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840382658760-n3qqsoq53qv0sdgqkc8kd05csg30va8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myvhc",
+            "certificate_hash": "3995b31d1c00b415cb9ef449e56a803585710480"
+          }
+        },
+        {
+          "client_id": "840382658760-c0sp5g3lfmh32rsjcj36mbdhbolul9m7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQuxGMsfkTBa8OKRJpfMcTV8ZdigU54u8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840382658760-c0sp5g3lfmh32rsjcj36mbdhbolul9m7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

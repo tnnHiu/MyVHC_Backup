@@ -2,24 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:title="@string/home"
-            android:id="@+id/home"
-            app:showAsAction="ifRoom"
-            android:icon="@drawable/ic_baseline_home_24"/>
-    <item android:title="@string/my_vehicle"
-            android:id="@+id/vehicle"
-            app:showAsAction="ifRoom"
-            android:icon="@drawable/ic_baseline_key_24"/>
-    <item android:title="@string/product"
-            app:showAsAction="ifRoom"
-            android:id="@+id/product"
-            android:icon="@drawable/ic_baseline_directions_car_24"/>
-    <item android:title="@string/agency"
-        app:showAsAction="ifRoom"
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/vehicle"
+        android:icon="@drawable/ic_baseline_key_24"
+        android:title="@string/my_vehicle"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/product"
+        android:icon="@drawable/ic_baseline_directions_car_24"
+        android:title="@string/product"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/agency"
-        android:icon="@drawable/ic_baseline_location_on_24"/>
-    <item android:title="@string/mail"
-        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="@string/agency"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/mail"
-        android:icon="@drawable/ic_baseline_mail_outline_24"/>
+        android:icon="@drawable/ic_baseline_mail_outline_24"
+        android:title="@string/mail"
+        app:showAsAction="ifRoom" />
 </menu>
