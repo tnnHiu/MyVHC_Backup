@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyVHC</string>
+    <string name="home">Trang chủ</string>
+    <string name="my_vehicle">Xe của tôi</string>
+    <string name="product">Sản phẩm</string>
+    <string name="agency">Đại lý</string>
+    <string name="mail">Tin nhắn</string>
+</resources>

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">MyVHC</string>
-    <string name="trang_chu">Trang chủ</string>
-    <string name="xe_cua_toi">Xe của tôi</string>
-    <string name="san_pham">Sản phẩm</string>
-    <string name="dai_ly">Đại lý</string>
-    <string name="tin_nhan">Tin nhắn</string>
+    <string name="home">Home</string>
+    <string name="my_vehicle">My vehicle</string>
+    <string name="product">Product</string>
+    <string name="agency">Agency</string>
+    <string name="mail">Mail</string>
 </resources>
