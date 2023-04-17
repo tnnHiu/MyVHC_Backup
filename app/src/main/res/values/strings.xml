@@ -5,8 +5,17 @@
     <string name="product">Product</string>
     <string name="agency">Agency</string>
     <string name="mail">Mail</string>
+    <string name="guarantee">Guarantee</string>
+    <string name="question">Question</string>
+    <string name="user_manual">User Manual</string>
+    <string name="car">Car</string>
+    <string name="motor">Motor</string>
+    <string name="setting">Setting</string>
+    <string name="introduce">Introduce</string>
+    <string name="logout">Logout</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">Login</string>
     <string name="phone">Phone</string>
     <string name="password">Password</string>
@@ -16,5 +25,6 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="have_an_account_login">Have an account? Login</string>
     <string name="splash_y_nh_em">Splash Đây nhé em</string>
+
 
 </resources>

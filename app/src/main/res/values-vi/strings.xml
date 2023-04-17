@@ -14,4 +14,12 @@
     <string name="sign_up">Đăng ký</string>
     <string name="confirm_password">Xác nhận mật khẩu</string>
     <string name="have_an_account_login">Bạn đã có tài khoản? Đăng nhập</string>
+    <string name="guarantee">Chính sách bảo hành</string>
+    <string name="question">Câu hỏi thường gặp</string>
+    <string name="user_manual">Hướng dẫn sử dụng</string>
+    <string name="car">Ô tô</string>
+    <string name="motor">Xe máy</string>
+    <string name="setting">Cài đặt</string>
+    <string name="introduce">"Giới thiệu "</string>
+    <string name="logout">Đăng xuất</string>
 </resources>

@@ -10,13 +10,19 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.myvhc.R
+import com.example.myvhc.adapter.AdapterHomeAgency
+import com.example.myvhc.databinding.FragmentHomeBinding
+import com.example.testui.model.Agency
+import com.example.testui.model.ContactAgency
+import com.example.testui.model.Item
+import com.example.testui.model.OrderAgency
 import com.google.android.material.navigation.NavigationView
 
 
 class FragmentHome : Fragment() {
     // TODO: Rename and change types of parameters
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navView: NavigationView
+
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +33,18 @@ class FragmentHome : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-        return view
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        val items: MutableList<Item> = ArrayList()
+        val agency1 = Agency("Tiến Thu", "200")
+        items.add(Item(0, agency1))
+        val contact1 = ContactAgency("33/61 Hương Lộ Ngọc Hiệp", "6:00 - 17:00", "0967070842")
+        items.add(Item(1, contact1))
+        val order1 = OrderAgency("Đặt lịch hẹn")
+        items.add(Item(2, order1))
+
+        binding.rvAgencyHome.adapter = AdapterHomeAgency(items)
+
+        return binding.root
     }
 }

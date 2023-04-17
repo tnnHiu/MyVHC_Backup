@@ -28,23 +28,32 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //kết nối firebase authentication
         auth = Firebase.auth
+
+        //tạo tham số lấy API gmail đăng nhập
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()
 
+        //khi mở app sẽ tự động đăng nhập bằng gmail đã đn trc đó
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         updateUILogged()
+
+        //tạo sự kiện nhấp vào nút đăng nhập bằng gmail
         binding.btnSIWGoogle.setOnClickListener {
             signIn()
         }
 
     }
 
+    //xác minh gmail và cho phép đăng nhập
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
+    //hàm onActivityResult sẽ truyền vào hàm firebaseAuthWithGoogle idToken của account
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -61,11 +70,12 @@ class LogInActivity : AppCompatActivity() {
         }
     }
 
+    //truyền idToken vào chứng chỉ (credential) thông qua chứng chỉ cho phép đăng nhập và thực hiện hàm updateUI
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
-                // Sign in success, update UI with the signed-in user's information
+                // Đăng nhập thành công, cập nhật giao diện người dùng với thông tin người dùng đã đăng nhập
                 Log.d(ContentValues.TAG, "signInWithCredential:success")
                 val user = auth.currentUser
                 updateUI(user)
@@ -76,6 +86,7 @@ class LogInActivity : AppCompatActivity() {
         }
     }
 
+    //đăng nhập thành công -> trang home
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             val intent = Intent(applicationContext, MainActivity::class.java)
@@ -84,6 +95,7 @@ class LogInActivity : AppCompatActivity() {
         }
     }
 
+    //mở trang home bằng gmail đã đăng nhập khi mở app
     private fun updateUILogged() {
         val user = auth.currentUser
         if (user != null) {

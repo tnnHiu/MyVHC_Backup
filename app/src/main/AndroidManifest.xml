@@ -12,15 +12,23 @@
         android:theme="@style/Theme.MyVHC"
         tools:targetApi="31">
         <activity
+            android:name=".BikeAgencyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".drawerActivity.GuaranActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GuaranteeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".drawerActivity.GuaranteeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".drawerActivity.GuaranteeActivity"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
             android:name=".MainActivity"
-
-            android:exported="false" />
-        <activity
-            android:name=".authActivity.SignUpActivity"
-            android:exported="false" />
-        <activity
-
-            android:name=".authActivity.LogInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".authActivity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".authActivity.LogInActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
