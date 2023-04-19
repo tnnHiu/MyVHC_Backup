@@ -1,5 +1,6 @@
 package com.example.myvhc
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -13,7 +14,11 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.myvhc.adapter.AdapterViewPager
 import com.example.myvhc.databinding.ActivityMainBinding
 import com.example.myvhc.drawerActivity.GuaranActivity
-import com.example.testui.fragment_main.*
+import com.example.myvhc.fragment_main.FragmentAgency
+import com.example.myvhc.fragment_main.FragmentHome
+import com.example.myvhc.fragment_main.FragmentMail
+import com.example.myvhc.fragment_main.FragmentProduct
+import com.example.myvhc.fragment_main.FragmentVehicle
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigation.NavigationView
 
@@ -22,19 +27,18 @@ class MainActivity : AppCompatActivity(){
     private lateinit var binding: ActivityMainBinding
     private val fragmentArrayList = ArrayList<Fragment>()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //thêm fragment vào fragment list
         fragmentArrayList.add(FragmentHome())
         fragmentArrayList.add(FragmentVehicle())
         fragmentArrayList.add(FragmentProduct())
         fragmentArrayList.add(FragmentAgency())
         fragmentArrayList.add(FragmentMail())
 
-        //bỏ fragment list vào adapter
         val adapterViewPager = AdapterViewPager(this, fragmentArrayList)
 
         //hiện các trang fragment main ở pager
@@ -54,7 +58,6 @@ class MainActivity : AppCompatActivity(){
             }
         })
 
-        //bấm icon để chuyển fragment
         binding.bottomNav.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> binding.pagerMain.currentItem = 0

@@ -22,4 +22,7 @@
     <string name="setting">Cài đặt</string>
     <string name="introduce">"Giới thiệu "</string>
     <string name="logout">Đăng xuất</string>
+    <string name="your_location">Vị trí của bạn</string>
+    <string name="motorbike_agency_dealer">Đại Lý Xe máy</string>
+    <string name="car_agency_dealer">Đại Lý Ôtô</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.testui.model
+package com.example.myvhc.models
 
 class OrderAgency (val orderTitle: String) {
 }

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "840382658760",
+    "firebase_url": "https://myvhcapp-2a5c6-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "myvhcapp-2a5c6",
     "storage_bucket": "myvhcapp-2a5c6.appspot.com"
   },
@@ -19,6 +20,14 @@
           "android_info": {
             "package_name": "com.example.myvhc",
             "certificate_hash": "3995b31d1c00b415cb9ef449e56a803585710480"
+          }
+        },
+        {
+          "client_id": "840382658760-qk22dap2hns28thrksinr95jh5hc5un7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myvhc",
+            "certificate_hash": "441ba563a5dbbfbd05755824461392409fb2d606"
           }
         },
         {
