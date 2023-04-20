@@ -107,7 +107,6 @@ class LogInActivity : AppCompatActivity() {
 
     companion object {
         const val RC_SIGN_IN = 1001
-        const val EXTRA_NAME = "EXTRA_NAME"
     }
 
 }

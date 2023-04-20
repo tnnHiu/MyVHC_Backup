@@ -22,11 +22,10 @@ import com.example.myvhc.fragment_main.FragmentVehicle
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val fragmentArrayList = ArrayList<Fragment>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,9 +78,11 @@ class MainActivity : AppCompatActivity(){
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
 
         navigationView.setNavigationItemSelectedListener {
-            when(it.itemId) {
-                R.id.nav_guaran -> {startActivity(Intent(this, GuaranActivity::class.java))
-                                    drawerLayout.closeDrawer(GravityCompat.END)}
+            when (it.itemId) {
+                R.id.nav_guaran -> {
+                    startActivity(Intent(this, GuaranActivity::class.java))
+                    drawerLayout.closeDrawer(GravityCompat.END)
+                }
             }
             true
         }

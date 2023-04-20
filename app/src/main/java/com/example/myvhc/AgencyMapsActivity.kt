@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.example.myvhc.databinding.ActivityAgencyMapsBinding
 import com.example.myvhc.models.Agency
@@ -19,17 +18,9 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityAgencyMapsBinding
     private lateinit var currentLocation: Location
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
@@ -115,7 +106,7 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     // Tính khoảng cách giữa vị trí hiện tại với các cửa hàng trong bán kinh cho trước
-    fun getDistance(latLng1: LatLng, latLng2: LatLng): Float {
+    private fun getDistance(latLng1: LatLng, latLng2: LatLng): Float {
         val results = FloatArray(1)
         Location.distanceBetween(
             latLng1.latitude, latLng1.longitude, latLng2.latitude, latLng2.longitude, results
