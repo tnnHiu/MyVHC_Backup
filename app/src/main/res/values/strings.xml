@@ -28,5 +28,6 @@
     <string name="motorbike_agency_dealer">Motorbike Agency Dealer</string>
     <string name="car_agency_dealer">Car Agency Dealer</string>
     <string name="title_activity_agency_maps">AgencyMapsActivity</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 </resources>

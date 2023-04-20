@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "840382658760-rtobn7ttr9usgf0eke4e7mtod13b9bvo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myvhc",
+            "certificate_hash": "740590c2e954254ee3c75756c97b4a3475d35c97"
+          }
+        },
+        {
           "client_id": "840382658760-c0sp5g3lfmh32rsjcj36mbdhbolul9m7.apps.googleusercontent.com",
           "client_type": 3
         }
