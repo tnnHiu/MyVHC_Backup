@@ -29,5 +29,20 @@
     <string name="car_agency_dealer">Car Agency Dealer</string>
     <string name="title_activity_agency_maps">AgencyMapsActivity</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="cyclinder_capacity">Cyclinder capacity</string>
+    <string name="frame_number">Frame number</string>
+    <string name="warranty_infomation">Warranty infomation</string>
+    <string name="order_for_service">Order for service</string>
+    <string name="more_detail">More detail</string>
+    <string name="motor_model">Motor Model</string>
+    <string name="motor_type">Motor Type</string>
+    <string name="color">Color</string>
+    <string name="replace_parts">Replace parts</string>
+    <string name="standard_warranty_information">Standard warranty information</string>
+    <string name="warranty_extension_package_information">Warranty extension package information</string>
+    <string name="most_recent_date_of_routine_check">Most recent date of routine check</string>
+    <string name="expiration_date_of_next_routine_check">Expiration date of next routine check</string>
+    <string name="periodic_inspection_information_pi">Periodic inspection information (PI)</string>
+    <string name="detail_and_order_for_service">Detail and Order for service</string>
 
 </resources>

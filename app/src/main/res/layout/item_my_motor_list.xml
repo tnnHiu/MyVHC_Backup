@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -60,7 +61,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cyclinder capacity"
+                        android:text="@string/cyclinder_capacity"
                         android:textSize="20sp"/>
 
                     <TextView
@@ -87,7 +88,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Frame number"
+                        android:text="@string/frame_number"
                         android:textSize="20sp"/>
 
                     <TextView
@@ -114,7 +115,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Warranty infomation"
+                        android:text="@string/warranty_infomation"
                         android:textSize="20sp"/>
 
                     <TextView
@@ -139,7 +140,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:background="@drawable/button_rectangle"
-                android:text="Order for service"
+                android:text="@string/order_for_service"
                 android:gravity="center"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -163,7 +164,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:text="More detail"
+                android:text="@string/more_detail"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
