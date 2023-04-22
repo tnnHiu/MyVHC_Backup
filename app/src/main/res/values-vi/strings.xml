@@ -25,4 +25,19 @@
     <string name="your_location">Vị trí của bạn</string>
     <string name="motorbike_agency_dealer">Đại Lý Xe máy</string>
     <string name="car_agency_dealer">Đại Lý Ôtô</string>
+    <string name="cyclinder_capacity">Công suất xi lanh</string>
+    <string name="frame_number">Số khung</string>
+    <string name="warranty_infomation">Thông tin bảo hành</string>
+    <string name="order_for_service">Đặt dịch vụ</string>
+    <string name="more_detail">Xem chi tiết</string>
+    <string name="motor_model">Mẫu xe</string>
+    <string name="motor_type">Loại xe</string>
+    <string name="color">Màu sắc</string>
+    <string name="replace_parts">Thay thế phụ tùng</string>
+    <string name="standard_warranty_information">Thông tin bảo hành tiêu chuẩn</string>
+    <string name="warranty_extension_package_information">Thông tin gói gia hạn bảo hành</string>
+    <string name="most_recent_date_of_routine_check">Ngày KTĐK gần nhất</string>
+    <string name="expiration_date_of_next_routine_check">Ngày hết hạn KTĐK tiếp theo</string>
+    <string name="periodic_inspection_information_pi">Thông tin kiểm tra định kỳ (PI)</string>
+    <string name="detail_and_order_for_service">Chi tiết và Đặt dịch vụ</string>
 </resources>
