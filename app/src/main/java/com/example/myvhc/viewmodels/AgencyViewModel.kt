@@ -1,10 +1,12 @@
 package com.example.myvhc.viewmodels
 
 
+import android.location.Location
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myvhc.models.Agency
+import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -37,9 +39,7 @@ class AgencyViewModel : ViewModel() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
             }
         })
     }
-
 }

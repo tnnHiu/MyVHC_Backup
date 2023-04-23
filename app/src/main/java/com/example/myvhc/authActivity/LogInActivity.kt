@@ -24,6 +24,7 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -38,7 +39,6 @@ class LogInActivity : AppCompatActivity() {
 
         //khi mở app sẽ tự động đăng nhập bằng gmail đã đn trc đó
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-        updateUILogged()
 
         //tạo sự kiện nhấp vào nút đăng nhập bằng gmail
         binding.btnSIWGoogle.setOnClickListener {
@@ -57,7 +57,6 @@ class LogInActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
@@ -76,7 +75,6 @@ class LogInActivity : AppCompatActivity() {
         auth.signInWithCredential(credential).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
                 // Đăng nhập thành công, cập nhật giao diện người dùng với thông tin người dùng đã đăng nhập
-                Log.d(ContentValues.TAG, "signInWithCredential:success")
                 val user = auth.currentUser
                 updateUI(user)
             } else {
@@ -96,14 +94,17 @@ class LogInActivity : AppCompatActivity() {
     }
 
     //mở trang home bằng gmail đã đăng nhập khi mở app
-    private fun updateUILogged() {
-        val user = auth.currentUser
-        if (user != null) {
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }
+//    private fun updateUILogged() {
+//        val user = auth.currentUser
+//        if (user != null) {
+//            val intent = Intent(applicationContext, MainActivity::class.java)
+//            intent.putExtra("name", user.displayName)
+//            intent.putExtra("userId", user.uid)
+//            intent.putExtra("email", user.email)
+//            startActivity(intent)
+//            finish()
+//        }
+//    }
 
     companion object {
         const val RC_SIGN_IN = 1001

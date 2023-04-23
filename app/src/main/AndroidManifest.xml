@@ -42,7 +42,7 @@
             android:name=".drawerActivity.GuaranActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".authActivity.LogInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,10 +51,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".authActivity.LogInActivity"
-            android:exported="true">
-
-        </activity>
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".authActivity.SignUpActivity"
             android:exported="false" />

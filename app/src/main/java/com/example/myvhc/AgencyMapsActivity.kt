@@ -1,9 +1,16 @@
 package com.example.myvhc
 
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +25,8 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.firebase.auth.FirebaseAuth
 
 class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -37,10 +46,8 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         agencyViewModel = ViewModelProvider(this)[AgencyViewModel::class.java]
 
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         getCurrentLocation()
-
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -50,24 +57,52 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng))
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
         googleMap.addMarker(markerOptions)
+        getNearbyAgency(latLng, googleMap)
 
+    }
+
+    @SuppressLint("InflateParams")
+    private fun getNearbyAgency(currentLatLng: LatLng, googleMap: GoogleMap) {
         agencyViewModel.agencyListSize.observe(this, Observer {
             agencyList = agencyViewModel.agencyList.value!!
+            val agencyView = (getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(
+                R.layout.title_maps, null
+            )
+            val agencyName = agencyView.findViewById<TextView>(R.id.agencyName)
+            val agencyCardView = agencyView.findViewById<CardView>(R.id.agencyCardView)
             for (agency in agencyList) {
                 val agencyLat = agency.agencyLatitude
                 val agencyLng = agency.agencyLongitude
                 if (agencyLat != null && agencyLng != null) {
                     val agencyLatLng = LatLng(agencyLat, agencyLng)
-                    if (getDistance(latLng, agencyLatLng) <= 10000000) {
+                    if (getDistance(currentLatLng, agencyLatLng) <= 10000) {
+                        agencyName.text = agency.agencyName
+                        val bitmap = Bitmap.createScaledBitmap(
+                            viewToBitMap(agencyCardView)!!,
+                            agencyCardView.width,
+                            agencyCardView.height,
+                            false
+                        )
+                        val agencyTitleMap = BitmapDescriptorFactory.fromBitmap(bitmap)
                         googleMap.addMarker(
-                            MarkerOptions().position(agencyLatLng).title("${agency.agencyName}")
+                            MarkerOptions().position(agencyLatLng).icon(agencyTitleMap)
                         )
                     }
                 }
             }
         })
-
     }
+
+    private fun viewToBitMap(view: View): Bitmap? {
+        view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+        val bitmap =
+            Bitmap.createBitmap(view.measuredWidth, view.measuredHeight, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        view.layout(0, 0, view.measuredWidth, view.measuredHeight)
+        view.draw(canvas)
+        return bitmap
+    }
+
 
     // get current location --------------------------------------------------------------start
     private fun getCurrentLocation() {
