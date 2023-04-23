@@ -44,5 +44,10 @@
     <string name="expiration_date_of_next_routine_check">Expiration date of next routine check</string>
     <string name="periodic_inspection_information_pi">Periodic inspection information (PI)</string>
     <string name="detail_and_order_for_service">Detail and Order for service</string>
+    <string name="spare_parts_replacement_reminder">Spare parts replacement reminder</string>
+    <string name="motor_insurance">Motor Insurance</string>
+    <string name="your_vehicle_does_not_have_insurance_information_please_update_to_receive_due_date_information">Your vehicle does not have insurance information, please update to receive due date information.</string>
+    <string name="repair_history">Repair history</string>
+    <string name="create_new">Create new</string>
 
 </resources>
