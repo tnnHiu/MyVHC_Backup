@@ -27,8 +27,6 @@
     <string name="your_location">Your location</string>
     <string name="motorbike_agency_dealer">Motorbike Agency Dealer</string>
     <string name="car_agency_dealer">Car Agency Dealer</string>
-    <string name="title_activity_agency_maps">AgencyMapsActivity</string>
-    <string name="title_activity_maps">MapsActivity</string>
     <string name="cyclinder_capacity">Cyclinder capacity</string>
     <string name="frame_number">Frame number</string>
     <string name="warranty_infomation">Warranty infomation</string>
@@ -50,5 +48,6 @@
     <string name="repair_history">Repair history</string>
     <string name="create_new">Create new</string>
     <string name="add_vehicle">Add Vehicle</string>
+    <string name="details_and_booking_service">Details and booking service</string>
 
 </resources>

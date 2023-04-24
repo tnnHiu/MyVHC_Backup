@@ -36,8 +36,6 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var agencyViewModel: AgencyViewModel
     private lateinit var agencyList: ArrayList<Agency>
     private val permissionCode = 101
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAgencyMapsBinding.inflate(layoutInflater)
@@ -45,7 +43,6 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
         agencyViewModel = ViewModelProvider(this)[AgencyViewModel::class.java]
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         getCurrentLocation()
     }
@@ -69,14 +66,16 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 R.layout.title_maps, null
             )
             val agencyName = agencyView.findViewById<TextView>(R.id.agencyName)
+            val agencyAddress = agencyView.findViewById<TextView>(R.id.agencyAddress)
             val agencyCardView = agencyView.findViewById<CardView>(R.id.agencyCardView)
             for (agency in agencyList) {
                 val agencyLat = agency.agencyLatitude
                 val agencyLng = agency.agencyLongitude
                 if (agencyLat != null && agencyLng != null) {
                     val agencyLatLng = LatLng(agencyLat, agencyLng)
-                    if (getDistance(currentLatLng, agencyLatLng) <= 10000) {
+                    if (getDistance(currentLatLng, agencyLatLng) <= 100000) {
                         agencyName.text = agency.agencyName
+                        agencyAddress.text = agency.agencyAddress
                         val bitmap = Bitmap.createScaledBitmap(
                             viewToBitMap(agencyCardView)!!,
                             agencyCardView.width,
@@ -95,6 +94,7 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun viewToBitMap(view: View): Bitmap? {
         view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+//        view.measure(160, 120)
         val bitmap =
             Bitmap.createBitmap(view.measuredWidth, view.measuredHeight, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)

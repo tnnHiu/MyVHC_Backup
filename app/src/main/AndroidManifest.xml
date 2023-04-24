@@ -39,8 +39,7 @@
 
         <activity
             android:name=".AgencyMapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_maps" />
+            android:exported="false" />
         <activity
             android:name=".drawerActivity.GuaranActivity"
             android:exported="false" />

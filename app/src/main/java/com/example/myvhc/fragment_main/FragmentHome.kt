@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.example.myvhc.databinding.FragmentHomeBinding
+import com.example.myvhc.models.CustomerVehicle
+import com.example.myvhc.viewmodels.CustomerVehicleViewModel
 
 class FragmentHome : Fragment() {
     // TODO: Rename and change types of parameters
