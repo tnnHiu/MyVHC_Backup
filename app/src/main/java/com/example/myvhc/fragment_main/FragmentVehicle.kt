@@ -6,9 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.myvhc.R
 import com.example.myvhc.databinding.FragmentVehicleBinding
-import com.example.myvhc.myVHCDetailActivity.MyMotorDetailActivity
+import com.example.myvhc.myVHCActivity.AddMyVehicleActivity
 
 
 class FragmentVehicle : Fragment() {
@@ -21,8 +20,8 @@ class FragmentVehicle : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentVehicleBinding.inflate(layoutInflater, container, false)
 
-        binding.motor.setOnClickListener {
-            startActivity(Intent(context, MyMotorDetailActivity::class.java))
+        binding.btnAddVehicle.setOnClickListener {
+            startActivity(Intent(context, AddMyVehicleActivity::class.java))
         }
 
         return binding.root

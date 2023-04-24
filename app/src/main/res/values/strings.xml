@@ -49,5 +49,6 @@
     <string name="your_vehicle_does_not_have_insurance_information_please_update_to_receive_due_date_information">Your vehicle does not have insurance information, please update to receive due date information.</string>
     <string name="repair_history">Repair history</string>
     <string name="create_new">Create new</string>
+    <string name="add_vehicle">Add Vehicle</string>
 
 </resources>
