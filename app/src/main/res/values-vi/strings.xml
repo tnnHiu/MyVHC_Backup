@@ -45,5 +45,7 @@
     <string name="your_vehicle_does_not_have_insurance_information_please_update_to_receive_due_date_information">Xe của bạn không có thông tin bảo hiểm, vui lòng cập nhật để nhận thông tin ngày đến hạn.</string>
     <string name="repair_history">Lich sử sửa chữa</string>
     <string name="create_new">Tạo mới</string>
+    <string name="add_vehicle">Thêm Xe</string>
     <string name="details_and_booking_service">Chi tiết và đặt dịch vụ</string>
+    <string name="aaaaaaaaaa">aaaaaaaaaa</string>
 </resources>

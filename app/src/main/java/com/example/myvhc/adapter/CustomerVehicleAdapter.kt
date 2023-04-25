@@ -7,9 +7,11 @@ import com.example.myvhc.databinding.FragmentHomeBinding
 import com.example.myvhc.databinding.ItemCustomerVehicleBinding
 import com.example.myvhc.databinding.ItemMyVehicleListBinding
 import com.example.myvhc.models.CustomerVehicle
+import com.example.myvhc.models.Vehicle
 
-class CustomerVehicleAdapter(private val customerVehicleList: ArrayList<CustomerVehicle>) :
-    RecyclerView.Adapter<CustomerVehicleAdapter.ViewHolder>() {
+class CustomerVehicleAdapter(
+    private val cvList: ArrayList<CustomerVehicle>, private var vList: ArrayList<Vehicle>
+) : RecyclerView.Adapter<CustomerVehicleAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: ItemCustomerVehicleBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -26,13 +28,18 @@ class CustomerVehicleAdapter(private val customerVehicleList: ArrayList<Customer
     }
 
     override fun getItemCount(): Int {
-        return customerVehicleList.size
+        return cvList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val holderBinding = holder.binding
-        holderBinding.txtVehicleModel.text = customerVehicleList[position].vehicleId
+        for (i in cvList) {
+            if (vList[position].vehicleChassisNum == cvList[position].vehicleId) {
+                holderBinding.txtVehicleModel.text = vList[position].vehicleModel
+                holderBinding.txtVehicleLicensePlate.text = cvList[position].licensePlate
+                holderBinding.txtVehicleCyclinderCapacity.text = vList[position].vehicleCylinderCap
+                holderBinding.txtWarrantyInfo.text = cvList[position].purchaseDate
+            }
+        }
     }
-
-
 }
