@@ -45,6 +45,10 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         agencyViewModel = ViewModelProvider(this)[AgencyViewModel::class.java]
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         getCurrentLocation()
+
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
