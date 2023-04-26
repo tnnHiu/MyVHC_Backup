@@ -34,9 +34,10 @@ class CustomerVehicleViewModel : ViewModel() {
                         val cvData = data.getValue(CustomerVehicle::class.java)
                         if (cvData != null) {
                             cvList.value?.add(cvData)
+                            cvData.vehicleId?.let { getVehicleList(it) }
                         }
                     }
-                    getVehicleList()
+
                 }
             }
 
@@ -46,8 +47,9 @@ class CustomerVehicleViewModel : ViewModel() {
         })
     }
 
-    private fun getVehicleList() {
-        vehicleRef.addValueEventListener(object : ValueEventListener {
+    private fun getVehicleList(vehicleId: String) {
+        val query = vehicleRef.orderByChild("vehicleChassisNum").equalTo(vehicleId)
+        query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot2: DataSnapshot) {
                 if (snapshot2.exists()) {
                     for (data in snapshot2.children) {
@@ -59,6 +61,7 @@ class CustomerVehicleViewModel : ViewModel() {
                     vListSize.value = cvList.value?.size
                 }
             }
+
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }

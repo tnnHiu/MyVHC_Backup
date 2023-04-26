@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myvhc.adapter.CustomerVehicleAdapter
 import com.example.myvhc.databinding.FragmentVehicleBinding
 import com.example.myvhc.models.CustomerVehicle
+import com.example.myvhc.models.Vehicle
 import com.example.myvhc.myVHCActivity.AddMyVehicleActivity
 import com.example.myvhc.viewmodels.CustomerVehicleViewModel
-import kotlin.math.log
 
 
 class FragmentVehicle : Fragment() {
@@ -47,19 +47,32 @@ class FragmentVehicle : Fragment() {
         return binding.root
     }
 
+    private fun arrayDataSynchronization(
+        cvData: ArrayList<CustomerVehicle>,
+        vData: ArrayList<Vehicle>
+    ): List<Pair<CustomerVehicle?, Vehicle>> {
+        val combinedList = vData.map { vehicle ->
+            val matchingCustomerVehicle = cvData.find { it.vehicleId == vehicle.vehicleChassisNum }
+            Pair(matchingCustomerVehicle, vehicle)
+        }.filter { it.first != null }
+        return combinedList.sortedWith(compareBy { it.first?.vehicleId })
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         customerVehicleViewModel = ViewModelProvider(this)[CustomerVehicleViewModel::class.java]
         customerVehicleViewModel.vListSize.observe(viewLifecycleOwner, Observer {
             val cvData = customerVehicleViewModel.cvList.value!!
             val vData = customerVehicleViewModel.vList.value!!
+            val dataSorted =  arrayDataSynchronization(cvData,vData)
             val recyclerView = binding.myVehicleRecyclerView
             recyclerView.layoutManager = LinearLayoutManager(context)
-            recyclerView.adapter = CustomerVehicleAdapter(cvData, vData)
-            Log.d("ccc",cvData.toString())
-            Log.d("ccc",vData.toString())
-
+            recyclerView.adapter = CustomerVehicleAdapter(dataSorted)
+            Log.d("ccc", cvData.toString())
+            Log.d("ccc", vData.toString())
         })
 
     }
 }
+
