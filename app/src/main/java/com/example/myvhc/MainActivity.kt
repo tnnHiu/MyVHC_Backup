@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     1 -> binding.bottomNav.selectedItemId = R.id.vehicle
                     2 -> binding.bottomNav.selectedItemId = R.id.product
                     3 -> binding.bottomNav.selectedItemId = R.id.agency
-                    4 -> binding.bottomNav.selectedItemId = R.id.mail
+//                    4 -> binding.bottomNav.selectedItemId = R.id.mail
                 }
                 super.onPageSelected(position)
             }
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.vehicle -> binding.pagerMain.currentItem = 1
                 R.id.product -> binding.pagerMain.currentItem = 2
                 R.id.agency -> binding.pagerMain.currentItem = 3
-                R.id.mail -> binding.pagerMain.currentItem = 4
+//                R.id.mail -> binding.pagerMain.currentItem = 4
             }
             true
         })

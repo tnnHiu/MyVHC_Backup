@@ -29,50 +29,46 @@ class FragmentVehicle : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentVehicleBinding.inflate(layoutInflater, container, false)
 
-//        customerVehicleViewModel = ViewModelProvider(this)[CustomerVehicleViewModel::class.java]
-//        //get data from view model
-//        customerVehicleViewModel.customerVehicleListSize.observe(viewLifecycleOwner, Observer {
-//            val data = customerVehicleViewModel.customerVehicleList.value!!
-//            val recyclerView = binding.myVehicleRecyclerView
-//            recyclerView.layoutManager = LinearLayoutManager(context)
-//            recyclerView.adapter = CustomerVehicleAdapter(data)
-//            Log.d("cccp", data.toString())
-//        })
-        //set click
-
-
+        getData()
         binding.btnAddVehicle.setOnClickListener {
             startActivity(Intent(context, AddMyVehicleActivity::class.java))
         }
         return binding.root
     }
 
-    private fun arrayDataSynchronization(
-        cvData: ArrayList<CustomerVehicle>,
-        vData: ArrayList<Vehicle>
-    ): List<Pair<CustomerVehicle?, Vehicle>> {
-        val combinedList = vData.map { vehicle ->
-            val matchingCustomerVehicle = cvData.find { it.vehicleId == vehicle.vehicleChassisNum }
-            Pair(matchingCustomerVehicle, vehicle)
-        }.filter { it.first != null }
-        return combinedList.sortedWith(compareBy { it.first?.vehicleId })
+    override fun onResume() {
+        super.onResume()
+        getData()
+
     }
 
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun getData() {
         customerVehicleViewModel = ViewModelProvider(this)[CustomerVehicleViewModel::class.java]
         customerVehicleViewModel.vListSize.observe(viewLifecycleOwner, Observer {
             val cvData = customerVehicleViewModel.cvList.value!!
             val vData = customerVehicleViewModel.vList.value!!
-            val dataSorted =  arrayDataSynchronization(cvData,vData)
+            val dataSorted = arrayDataSynchronization(cvData, vData)
             val recyclerView = binding.myVehicleRecyclerView
             recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.adapter = CustomerVehicleAdapter(dataSorted)
-            Log.d("ccc", cvData.toString())
-            Log.d("ccc", vData.toString())
         })
-
     }
+
+    private fun arrayDataSynchronization(
+        cvData: ArrayList<CustomerVehicle>, vData: ArrayList<Vehicle>
+    ): List<Pair<CustomerVehicle?, Vehicle>> {
+
+        // Tạo list kết hợp của vData và cvData theo vehicleId = vehicleChassisNum
+        val combinedList = vData.map { vehicle ->
+            val matchingCustomerVehicle = cvData.find { it.vehicleId == vehicle.vehicleChassisNum }
+            Pair(matchingCustomerVehicle, vehicle)
+        }
+        //   .filter { it.first != null }
+        // Bỏ những phần tử có vehicleId không tồn tại trong danh sách customerVehicles
+
+        //  Sắp xếp và trả về list mới theo vehicleId
+        return combinedList.sortedWith(compareBy { it.first?.vehicleId })
+    }
+
 }
 

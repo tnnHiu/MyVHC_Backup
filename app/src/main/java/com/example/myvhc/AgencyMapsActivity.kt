@@ -103,7 +103,6 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         return bitmap
     }
 
-
     // get current location --------------------------------------------------------------start
     private fun getCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(
