@@ -1,5 +1,6 @@
 package com.example.myvhc.myVHCActivity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myvhc.databinding.ActivityAddMyVehicleBinding
@@ -15,6 +16,10 @@ class AddMyVehicleActivity : AppCompatActivity() {
 
         binding.btnBack.setOnClickListener {
             onBackPressed()
+        }
+
+        binding.motor.setOnClickListener {
+            startActivity(Intent(this, AddMotorActivity::class.java))
         }
 
     }

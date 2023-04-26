@@ -512,7 +512,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="20dp">
 
                 <TextView
@@ -530,6 +530,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/rvDetailRemindReplace"
+                    tools:listitem="@layout/item_part_replace"
                     app:layout_constraintTop_toBottomOf="@id/labelRemind"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -634,6 +635,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    tools:listitem="@layout/item_repair_history"
                     app:layout_constraintTop_toBottomOf="@id/labelRepair"/>
 
                 <TextView

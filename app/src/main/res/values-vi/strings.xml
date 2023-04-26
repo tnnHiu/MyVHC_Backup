@@ -45,7 +45,18 @@
     <string name="your_vehicle_does_not_have_insurance_information_please_update_to_receive_due_date_information">Xe của bạn không có thông tin bảo hiểm, vui lòng cập nhật để nhận thông tin ngày đến hạn.</string>
     <string name="repair_history">Lich sử sửa chữa</string>
     <string name="create_new">Tạo mới</string>
-    <string name="add_vehicle">Thêm Xe</string>
+    <string name="add_vehicle">Thêm xe</string>
     <string name="details_and_booking_service">Chi tiết và đặt dịch vụ</string>
-    <string name="aaaaaaaaaa">aaaaaaaaaa</string>
+    <string name="please_enter_frame_number_vin">Vui lòng nhập số khung-VIN</string>
+    <string name="instructions_for_getting_the_frame_number">Hướng dẫn lấy số khung xe</string>
+    <string name="enter_frame_number_or_barcode">Nhập số khung xe hoặc quét barcode</string>
+    <string name="get_frame_number_by_barcode">Lấy số khung bằng Mã vạch</string>
+    <string name="the_barcode_is_attached_to_the_service_document_bag_in_the_trunk">Mã vạch được đính kèm cùng túi đựng tài liệu dịch vụ để trong cốp xe</string>
+    <string name="get_frame_number_directly_on_motorcycle">Lấy số khung trực tiếp trên xe</string>
+    <string name="if_you_can_t_find_the_frame_number">Nếu bạn không tìm thấy số khung</string>
+    <string name="frame_numbers_can_be_found_in_the_following_locations">Số khung có thể được tìm thấy ở các vị trí sau:</string>
+    <string name="steering_neck_position">Vị trí cổ lái</string>
+    <string name="position_near_the_rear_handlebar_under_the_saddle">Vị trí gần tay lái phía sau, dưới yên xe</string>
+    <string name="position_under_the_motorcycle">Vị trí dưới gầm xe</string>
+    <string name="please_refer_to_the_user_s_manual_or_contact_0967070842">Hãy tham khảo sách Hướng dẫn sử dụng hoặc liên hệ 0967070842</string>
 </resources>
