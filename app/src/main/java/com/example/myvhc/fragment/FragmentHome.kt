@@ -1,20 +1,16 @@
-package com.example.myvhc.fragment_main
+package com.example.myvhc.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import com.example.myvhc.databinding.FragmentHomeBinding
-import com.example.myvhc.models.CustomerVehicle
-import com.example.myvhc.viewmodels.CustomerVehicleViewModel
 
 class FragmentHome : Fragment() {
     // TODO: Rename and change types of parameters
 
     private lateinit var binding: FragmentHomeBinding
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {

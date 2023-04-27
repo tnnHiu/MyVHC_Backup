@@ -17,11 +17,11 @@ import com.example.myvhc.adapter.AdapterViewPager
 import com.example.myvhc.authActivity.LogInActivity
 import com.example.myvhc.databinding.ActivityMainBinding
 import com.example.myvhc.drawerActivity.GuaranActivity
-import com.example.myvhc.fragment_main.FragmentAgency
-import com.example.myvhc.fragment_main.FragmentHome
-import com.example.myvhc.fragment_main.FragmentMail
-import com.example.myvhc.fragment_main.FragmentProduct
-import com.example.myvhc.fragment_main.FragmentVehicle
+import com.example.myvhc.fragment.FragmentAgency
+import com.example.myvhc.fragment.FragmentHome
+import com.example.myvhc.fragment.FragmentMail
+import com.example.myvhc.fragment.FragmentProduct
+import com.example.myvhc.fragment.FragmentVehicle
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.navigation.NavigationBarView
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     1 -> binding.bottomNav.selectedItemId = R.id.vehicle
                     2 -> binding.bottomNav.selectedItemId = R.id.product
                     3 -> binding.bottomNav.selectedItemId = R.id.agency
-//                    4 -> binding.bottomNav.selectedItemId = R.id.mail
+                    4 -> binding.bottomNav.selectedItemId = R.id.mail
                 }
                 super.onPageSelected(position)
             }
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.vehicle -> binding.pagerMain.currentItem = 1
                 R.id.product -> binding.pagerMain.currentItem = 2
                 R.id.agency -> binding.pagerMain.currentItem = 3
-//                R.id.mail -> binding.pagerMain.currentItem = 4
+                R.id.mail -> binding.pagerMain.currentItem = 4
             }
             true
         })
@@ -110,7 +110,6 @@ class MainActivity : AppCompatActivity() {
         inflater.inflate(R.menu.menu_drawer, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
 
     private fun signOut() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

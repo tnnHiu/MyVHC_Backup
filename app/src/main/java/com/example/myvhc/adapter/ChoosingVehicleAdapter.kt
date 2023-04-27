@@ -1,17 +1,18 @@
 package com.example.myvhc.adapter
 
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
-import com.example.myvhc.databinding.ItemCustomerVehicleBinding
+import com.example.myvhc.databinding.ItemChoosingVehicleBinding
 import com.example.myvhc.models.CustomerVehicle
 import com.example.myvhc.models.Vehicle
 
-class CustomerVehicleAdapter(
+class ChoosingVehicleAdapter(
     private val dataSorted: List<Pair<CustomerVehicle?, Vehicle>>
-) : RecyclerView.Adapter<CustomerVehicleAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<ChoosingVehicleAdapter.ViewHolder>() {
 
     private lateinit var mListener: OnItemClickListener
 
@@ -24,7 +25,7 @@ class CustomerVehicleAdapter(
     }
 
     inner class ViewHolder(
-        val binding: ItemCustomerVehicleBinding, clickListener: OnItemClickListener
+        val binding: ItemChoosingVehicleBinding, clickListener: OnItemClickListener
     ) : RecyclerView.ViewHolder(binding.root) {
         fun loadImg(): RequestManager {
             return Glide.with(itemView)
@@ -38,7 +39,7 @@ class CustomerVehicleAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = ItemCustomerVehicleBinding.inflate(
+        val view = ItemChoosingVehicleBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
         return ViewHolder(view, mListener)
@@ -49,12 +50,11 @@ class CustomerVehicleAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val holderBinding = holder.binding
-        holder.loadImg().load(dataSorted[position].second.vehicleImg).into(holderBinding.imgVehicle)
-        holderBinding.txtVehicleModel.text = dataSorted[position].second.vehicleModel
-        holderBinding.txtVehicleLicensePlate.text = dataSorted[position].first?.licensePlate
-        holderBinding.txtVehicleCyclinderCapacity.text =
-            dataSorted[position].second.vehicleCylinderCap
-        holderBinding.txtWarrantyInfo.text = dataSorted[position].first?.purchaseDate
+
+        holder.loadImg().load(dataSorted[position].second.vehicleImg)
+            .into(holder.binding.imgVehicle)
+        holder.binding.txtVehicleModel.text = dataSorted[position].second.vehicleModel
+        holder.binding.txtVehicleLicensePlate.text = dataSorted[position].first?.licensePlate
     }
+
 }

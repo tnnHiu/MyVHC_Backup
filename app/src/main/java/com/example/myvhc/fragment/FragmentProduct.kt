@@ -1,11 +1,10 @@
-package com.example.myvhc.fragment_main
+package com.example.myvhc.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.myvhc.R
 import com.example.myvhc.databinding.FragmentProductBinding
 
 class FragmentProduct : Fragment() {

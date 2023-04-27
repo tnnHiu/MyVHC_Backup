@@ -17,14 +17,17 @@
         android:theme="@style/Theme.MyVHC"
         tools:targetApi="31">
         <activity
+            android:name=".myVHCActivity.ListVehicleActivity"
+            android:exported="false" />
+        <activity
             android:name=".myVHCActivity.AddMotorActivity"
             android:exported="false" />
         <activity
             android:name=".myVHCActivity.AddMyVehicleActivity"
             android:exported="false" />
         <activity
-            android:name=".myVHCActivity.MyMotorDetailActivity"
-            android:exported="false" />
+            android:name=".myVHCActivity.VehicleDetailActivity"
+            android:exported="true" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

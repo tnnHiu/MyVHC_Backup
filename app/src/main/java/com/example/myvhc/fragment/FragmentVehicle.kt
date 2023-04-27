@@ -1,8 +1,7 @@
-package com.example.myvhc.fragment_main
+package com.example.myvhc.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +14,7 @@ import com.example.myvhc.databinding.FragmentVehicleBinding
 import com.example.myvhc.models.CustomerVehicle
 import com.example.myvhc.models.Vehicle
 import com.example.myvhc.myVHCActivity.AddMyVehicleActivity
+import com.example.myvhc.myVHCActivity.VehicleDetailActivity
 import com.example.myvhc.viewmodels.CustomerVehicleViewModel
 
 
@@ -50,7 +50,20 @@ class FragmentVehicle : Fragment() {
             val dataSorted = arrayDataSynchronization(cvData, vData)
             val recyclerView = binding.myVehicleRecyclerView
             recyclerView.layoutManager = LinearLayoutManager(context)
-            recyclerView.adapter = CustomerVehicleAdapter(dataSorted)
+            val mAdapter = CustomerVehicleAdapter(dataSorted)
+            recyclerView.adapter = mAdapter
+            mAdapter.setOnItemClickListener(object : CustomerVehicleAdapter.OnItemClickListener {
+                override fun onItemClick(position: Int) {
+                    val intent = Intent(requireContext(), VehicleDetailActivity::class.java)
+                    val bundle = Bundle()
+                    val cvDataSorted = dataSorted[position].first
+                    val vDataSorted = dataSorted[position].second
+                    bundle.putParcelable("cvData", cvDataSorted)
+                    bundle.putParcelable("vData", vDataSorted)
+                    intent.putExtras(bundle)
+                    startActivity(intent)
+                }
+            })
         })
     }
 

@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:padding="20dp">
-
+    android:padding="100dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/agencyCardView"
-        android:layout_width="160sp"
-        android:layout_height="120sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="10sp"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="8sp">
 
             <LinearLayout
                 android:id="@+id/layoutHead"
@@ -32,22 +34,16 @@
 
                 <TextView
                     android:id="@+id/agencyName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="@string/agency"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="10sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     tools:ignore="SmallSp" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_weight="0"
-                    android:src="@drawable/ic_favorite"
-                    app:tint="@color/white" />
 
             </LinearLayout>
 
@@ -62,38 +58,38 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/layoutHead">
 
-                <TextView
-                    android:id="@+id/agencyAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-
-                    android:text="@string/agency"
-                    android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SmallSp" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/btnOrderService"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4sp"
                 android:background="@drawable/button_rectangle"
                 android:gravity="center"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:padding="4dp"
                 android:text="@string/detail_and_order_for_service"
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/layoutDistance"
                 app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/agencyAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/agency"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SmallSp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

@@ -1,4 +1,4 @@
-package com.example.myvhc.fragment_main
+package com.example.myvhc.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -25,7 +25,6 @@ class FragmentAgency : Fragment() {
         binding.car.setOnClickListener {
             startActivity(Intent(context, AgencyMapsActivity::class.java))
         }
-
         return binding.root
     }
 }

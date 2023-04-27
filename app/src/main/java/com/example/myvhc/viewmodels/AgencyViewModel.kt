@@ -12,7 +12,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-
 class AgencyViewModel : ViewModel() {
     private val dbRef = FirebaseDatabase.getInstance().getReference("agencies")
     var agencyList = MutableLiveData<ArrayList<Agency>>(ArrayList())

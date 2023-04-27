@@ -1,4 +1,4 @@
-package com.example.myvhc.fragment_main
+package com.example.myvhc.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
