@@ -61,6 +61,19 @@
     <string name="position_near_the_rear_handlebar_under_the_saddle">Position near the rear handlebar, under the saddle</string>
     <string name="position_under_the_motorcycle">Position under the motorcycle</string>
     <string name="please_refer_to_the_user_s_manual_or_contact_0967070842">Please refer to the User\'s Manual or contact 0967070842</string>
+    <string name="distance">Distance</string>
+    <string name="location">Location</string>
+    <string name="phone_number">Phone number</string>
+    <string name="work_time">Work time</string>
+    <string name="add_to_favorite_list">Add to favorite list</string>
+    <string name="chosen_motor">Chosen Motor</string>
+    <string name="chosen_agency">Chosen Agency</string>
+    <string name="chosen_time">Chosen Time</string>
+    <string name="periodic_inspection">Periodic inspection</string>
+    <string name="repair">Repair</string>
+    <string name="add_a_description_of_the_vehicle_s_fault_the_detailed_description_helps_the_dealer_better_prepare_to_take_care_of_your_vehicle">Add a description of the vehicle\'s fault. The detailed description helps the dealer better prepare to take care of your vehicle</string>
+    <string name="your_car_details">Your car details</string>
+    <string name="actual_pictures_of_the_car">Actual pictures of the car</string>
     <string name="brand">Brand:</string>
     <string name="chassis_number">Chassis Number</string>
     <!-- TODO: Remove or change this placeholder text -->

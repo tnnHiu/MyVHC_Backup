@@ -20,6 +20,12 @@
             android:name=".myVHCActivity.ListVehicleActivity"
             android:exported="false" />
         <activity
+            android:name=".serviceActivity.ServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".serviceActivity.AgencyDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".myVHCActivity.AddMotorActivity"
             android:exported="false" />
         <activity
