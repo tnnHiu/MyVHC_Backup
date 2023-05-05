@@ -6,6 +6,7 @@
     android:fillViewport="true"
     android:padding="20sp"
     tools:context=".fragment.FragmentVehicle">
+    tools:context=".fragment_main.FragmentVehicle">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:id="@+id/myVehicleRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="" />
+            tools:listitem="@layout/item_customer_vehicle" />
 
         <TextView
             android:id="@+id/btnAddVehicle"
@@ -31,7 +32,7 @@
             android:paddingBottom="10dp"
             android:text="@string/add_vehicle"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
