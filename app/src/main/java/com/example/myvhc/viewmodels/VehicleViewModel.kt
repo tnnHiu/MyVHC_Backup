@@ -10,9 +10,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-
-class CustomerVehicleViewModel : ViewModel() {
-    private var auth = FirebaseAuth.getInstance().currentUser
+class VehicleViewModel : ViewModel() {
     private val dbRef = FirebaseDatabase.getInstance()
     private val customerVehicleRef = dbRef.getReference("customer_vehicle")
     private val vehicleRef = dbRef.getReference("vehicles")
@@ -25,8 +23,7 @@ class CustomerVehicleViewModel : ViewModel() {
     }
 
     private fun getData() {
-        val queryCV = customerVehicleRef.orderByChild("customerId").equalTo(auth?.uid)
-        queryCV.addValueEventListener(object : ValueEventListener {
+        customerVehicleRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot1: DataSnapshot) {
                 if (snapshot1.exists()) {
                     for (data in snapshot1.children) {
@@ -47,8 +44,7 @@ class CustomerVehicleViewModel : ViewModel() {
     }
 
     private fun getVehicleList(vehicleId: String) {
-        val query = vehicleRef.orderByChild("vehicleChassisNum").equalTo(vehicleId)
-        query.addValueEventListener(object : ValueEventListener {
+        vehicleRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot2: DataSnapshot) {
                 if (snapshot2.exists()) {
                     for (data in snapshot2.children) {
@@ -68,7 +64,3 @@ class CustomerVehicleViewModel : ViewModel() {
 
     }
 }
-
-
-
-

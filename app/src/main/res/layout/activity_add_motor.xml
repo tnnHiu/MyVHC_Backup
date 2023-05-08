@@ -65,26 +65,32 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="@string/enter_frame_number_or_barcode"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/imgMotor" />
 
             <EditText
                 android:id="@+id/edtFrameNum"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_width="297dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="36dp"
                 android:layout_marginTop="20dp"
+                android:autofillHints=""
                 android:background="@drawable/button_rectangle_invisible"
+                android:ems="10"
                 android:hint="@string/please_enter_frame_number_vin"
-                android:padding="10dp"
-                android:textSize="14sp"
+                android:padding="12dp"
+                android:textColorHint="#fff"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnScan"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/labelFrame"
                 app:layout_constraintWidth_percent="0.75" />
 
             <ImageView
+                android:id="@+id/btnScan"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -100,30 +106,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                android:background="@drawable/background_add_vhc"
                 android:minHeight="350dp"
                 android:paddingBottom="50dp"
-                android:background="@drawable/background_add_vhc"
                 app:layout_constraintTop_toBottomOf="@+id/edtFrameNum">
 
                 <TextView
                     android:id="@+id/labelInstruct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginTop="20dp"
-                    android:textColor="@color/orange"
-                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/instructions_for_getting_the_frame_number"
                     android:textAllCaps="true"
-                    android:text="@string/instructions_for_getting_the_frame_number"/>
+                    android:textColor="@color/orange"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
                     android:id="@+id/labelWay1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/labelInstruct">
@@ -132,18 +138,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1. "
-                        android:textSize="14sp"
                         android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/get_frame_number_by_barcode"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
                         android:layout_weight="1"
-                        android:textStyle="bold"/>
+                        android:text="@string/get_frame_number_by_barcode"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/btnExpand1"
@@ -158,30 +164,30 @@
                     android:id="@+id/layoutExpandable1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
                     android:visibility="gone"
                     app:layout_constraintTop_toBottomOf="@+id/labelWay1">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="@string/the_barcode_is_attached_to_the_service_document_bag_in_the_trunk"/>
+                        android:text="@string/the_barcode_is_attached_to_the_service_document_bag_in_the_trunk"
+                        android:textColor="@color/white" />
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginTop="20dp">
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="20dp">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
-                            android:src="@drawable/barcode1"
-                            android:scaleType="fitXY" />
+                            android:scaleType="fitXY"
+                            android:src="@drawable/barcode1" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -191,8 +197,8 @@
                     android:id="@+id/labelWay2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/layoutExpandable1">
@@ -201,18 +207,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2. "
-                        android:textSize="14sp"
                         android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/get_frame_number_directly_on_motorcycle"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
                         android:layout_weight="1"
-                        android:textStyle="bold"/>
+                        android:text="@string/get_frame_number_directly_on_motorcycle"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/btnExpand2"
@@ -227,146 +233,146 @@
                     android:id="@+id/layoutExpandable2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
                     android:visibility="gone"
                     app:layout_constraintTop_toBottomOf="@+id/labelWay2">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/frame_numbers_can_be_found_in_the_following_locations"
                         android:textColor="@color/white"
-                        android:textSize="14sp"
-                        android:text="@string/frame_numbers_can_be_found_in_the_following_locations"/>
+                        android:textSize="14sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="30dp">
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1. "
-                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
-                            android:textColor="@color/white"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/steering_neck_position"
-                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
-                            android:textColor="@color/white"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginTop="20dp">
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="20dp">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
-                            android:src="@drawable/vin1"
-                            android:scaleType="fitXY" />
+                            android:scaleType="fitXY"
+                            android:src="@drawable/vin1" />
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginTop="10dp">
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="20dp">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
-                            android:src="@drawable/vin2"
-                            android:scaleType="fitXY" />
+                            android:scaleType="fitXY"
+                            android:src="@drawable/vin2" />
 
                     </androidx.cardview.widget.CardView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="30dp">
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2. "
-                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
-                            android:textColor="@color/white"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/position_near_the_rear_handlebar_under_the_saddle"
-                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
-                            android:textColor="@color/white"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginTop="10dp">
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="20dp">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
-                            android:src="@drawable/vin3"
-                            android:scaleType="fitXY" />
+                            android:scaleType="fitXY"
+                            android:src="@drawable/vin3" />
 
                     </androidx.cardview.widget.CardView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="30dp">
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="3. "
-                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
-                            android:textColor="@color/white"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/position_under_the_motorcycle"
-                            android:textStyle="bold"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
-                            android:textColor="@color/white"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="20dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="20dp">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
-                            android:src="@drawable/vin4"
-                            android:scaleType="fitXY" />
+                            android:scaleType="fitXY"
+                            android:src="@drawable/vin4" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -376,8 +382,8 @@
                     android:id="@+id/labelWay3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/layoutExpandable2">
@@ -386,18 +392,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3. "
-                        android:textSize="14sp"
                         android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/if_you_can_t_find_the_frame_number"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
                         android:layout_weight="1"
-                        android:textStyle="bold"/>
+                        android:text="@string/if_you_can_t_find_the_frame_number"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/btnExpand3"
@@ -412,18 +418,18 @@
                     android:id="@+id/layoutExpandable3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
                     android:visibility="gone"
                     app:layout_constraintTop_toBottomOf="@+id/labelWay3">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="@string/please_refer_to_the_user_s_manual_or_contact_0967070842"/>
+                        android:text="@string/please_refer_to_the_user_s_manual_or_contact_0967070842"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -443,6 +449,7 @@
         app:layout_constraintTop_toBottomOf="@id/layoutScrollView">
 
         <TextView
+            android:id="@+id/btnAddVeicle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_rectangle"

@@ -117,27 +117,21 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                             val bundle = getIntent.extras
                             val cvData = bundle?.getParcelable<CustomerVehicle>("cvData")
                             val vData = bundle?.getParcelable<Vehicle>("vData")
-//                            if (cvData != null) {
-//                                googleMap.setOnMarkerClickListener {
-//                                    startActivity(Intent(this, ServiceActivity::class.java))
-//                                    return@setOnMarkerClickListener true
-//                                }
-//                            } else {
-//                                googleMap.setOnMarkerClickListener {
-//                                    startActivity(Intent(this, ListVehicleActivity::class.java))
-//                                    return@setOnMarkerClickListener true
-//                                }
                             googleMap.setOnMarkerClickListener {
                                 val intent = Intent(this, AgencyDetailActivity::class.java)
                                 val bundleAgencyMapsActivity = Bundle()
                                 bundleAgencyMapsActivity.putParcelable("cvData", cvData)
                                 bundleAgencyMapsActivity.putParcelable("vData", vData)
+                                bundleAgencyMapsActivity.putString("agencyId", agency.agencyId)
                                 bundleAgencyMapsActivity.putString("agencyName", agency.agencyName)
+                                bundleAgencyMapsActivity.putString(
+                                    "agencyAddress", agency.agencyAddress
+                                )
                                 bundleAgencyMapsActivity.putString(
                                     "agencyWorkTime", agency.agencyWorkTime
                                 )
                                 bundleAgencyMapsActivity.putString(
-                                    "agencyName", agency.agencyPhoneNum
+                                    "agencyPhoneNum", agency.agencyPhoneNum
                                 )
                                 intent.putExtras(bundleAgencyMapsActivity)
                                 startActivity(intent)

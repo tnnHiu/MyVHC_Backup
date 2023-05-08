@@ -74,4 +74,7 @@
     <string name="add_a_description_of_the_vehicle_s_fault_the_detailed_description_helps_the_dealer_better_prepare_to_take_care_of_your_vehicle">Thêm một mô tả về lỗi của chiếc xe. Mô tả chi tiết giúp đại lý chuẩn bị tốt hơn để chăm sóc chiếc xe của bạn</string>
     <string name="your_car_details">Thông tin chi tiết xe của bạn</string>
     <string name="actual_pictures_of_the_car">Hình ảnh thực tế của xe</string>
+    <string name="choose_vehicle">Chọn xe</string>
+    <string name="please_select_a_date">Vui lòng chọn ngày</string>
+    <string name="please_select_a_time">Vui lòng chọn giờ</string>
 </resources>

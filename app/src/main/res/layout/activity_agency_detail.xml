@@ -23,14 +23,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/icon_color" />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/logo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/txtAgencyName"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/txtAgencyName"
             android:layout_width="wrap_content"
@@ -164,7 +156,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/txtWorkTime"
+                        android:id="@+id/txtAgencyWorkTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="7h - 17h30"
@@ -206,7 +198,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/txtPhone"
+                        android:id="@+id/txtAgencyPhone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/phone"

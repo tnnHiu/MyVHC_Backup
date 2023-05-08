@@ -23,7 +23,6 @@ class VehicleDetailActivity : AppCompatActivity() {
         val bundle = getIntent.extras
         val cvData = bundle?.getParcelable<CustomerVehicle>("cvData")
         val vData = bundle?.getParcelable<Vehicle>("vData")
-//        val agency
 
         if (vData != null && cvData != null) {
             Glide.with(this).load(vData.vehicleImg).into(binding.imgVehicle)

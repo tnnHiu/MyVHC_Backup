@@ -16,11 +16,11 @@ import com.example.myvhc.databinding.ActivityVehicleDetailBinding
 import com.example.myvhc.models.CustomerVehicle
 import com.example.myvhc.models.Vehicle
 import com.example.myvhc.viewmodels.CustomerVehicleViewModel
+import com.example.myvhc.viewmodels.VehicleViewModel
 
 class ListVehicleActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListVehicleBinding
     private lateinit var customerVehicleViewModel: CustomerVehicleViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,12 +49,6 @@ class ListVehicleActivity : AppCompatActivity() {
             mAdapter.setOnItemClickListener(object : ChoosingVehicleAdapter.OnItemClickListener {
                 override fun onItemClick(position: Int) {
                     val intent = Intent(this@ListVehicleActivity, VehicleDetailActivity::class.java)
-//                    val bundle = Bundle()
-//                    val cvDataSorted = dataSorted[position].first
-//                    val vDataSorted = dataSorted[position].second
-//                    bundle.putParcelable("cvData", cvDataSorted)
-//                    bundle.putParcelable("vData", vDataSorted)
-//                    intent.putExtras(bundle)
                     startActivity(intent)
                 }
             })

@@ -77,7 +77,8 @@
     <string name="brand">Brand:</string>
     <string name="chassis_number">Chassis Number</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="choose_vehicle">Choose Vehicle</string>
+    <string name="please_select_a_date">Please select a date</string>
+    <string name="please_select_a_time">Please select a time</string>
 
 </resources>
