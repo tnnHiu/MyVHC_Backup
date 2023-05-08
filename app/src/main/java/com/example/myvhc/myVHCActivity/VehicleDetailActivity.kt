@@ -23,6 +23,7 @@ class VehicleDetailActivity : AppCompatActivity() {
         val bundle = getIntent.extras
         val cvData = bundle?.getParcelable<CustomerVehicle>("cvData")
         val vData = bundle?.getParcelable<Vehicle>("vData")
+//        val agency
 
         if (vData != null && cvData != null) {
             Glide.with(this).load(vData.vehicleImg).into(binding.imgVehicle)
@@ -38,7 +39,10 @@ class VehicleDetailActivity : AppCompatActivity() {
         }
         binding.btnOrderService.setOnClickListener {
             val intent = Intent(this, AgencyMapsActivity::class.java)
-            intent.putExtra("test", "1")
+            val bundleAgencyMapsActivity = Bundle()
+            bundleAgencyMapsActivity.putParcelable("cvData", cvData)
+            bundleAgencyMapsActivity.putParcelable("vData", vData)
+            intent.putExtras(bundleAgencyMapsActivity)
             startActivity(intent)
         }
     }

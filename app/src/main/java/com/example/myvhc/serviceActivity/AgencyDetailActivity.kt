@@ -19,7 +19,7 @@ class AgencyDetailActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        binding.btnOrder.setOnClickListener{
+        binding.btnOrder.setOnClickListener {
             startActivity(Intent(this, ServiceActivity::class.java))
         }
 

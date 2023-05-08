@@ -18,8 +18,12 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.myvhc.databinding.ActivityAgencyMapsBinding
 import com.example.myvhc.databinding.ActivityMainBinding
 import com.example.myvhc.models.Agency
+import com.example.myvhc.models.CustomerVehicle
+import com.example.myvhc.models.Vehicle
 import com.example.myvhc.myVHCActivity.ListVehicleActivity
 import com.example.myvhc.myVHCActivity.VehicleDetailActivity
+import com.example.myvhc.serviceActivity.AgencyDetailActivity
+import com.example.myvhc.serviceActivity.ServiceActivity
 import com.example.myvhc.viewmodels.AgencyViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -78,7 +82,6 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val txtAgencyName = marker.findViewById<TextView>(R.id.agencyName)
         val txtAgencyAddress = marker.findViewById<TextView>(R.id.agencyAddress)
         txtAgencyName.text = agencyName
-        txtAgencyAddress.text = agencyAddress
         val bitmap =
             Bitmap.createScaledBitmap(viewToBitmap(marker)!!, marker.width, marker.height, false)
         return BitmapDescriptorFactory.fromBitmap(bitmap)
@@ -110,17 +113,36 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                             googleMap.addMarker(
                                 MarkerOptions().position(agencyLatLng).icon(icon)
                             )
-                            val test = intent.getStringExtra("test")
-                            if (test != null) {
-                                googleMap.setOnMarkerClickListener {
-                                    startActivity(Intent(this, VehicleDetailActivity::class.java))
-                                    return@setOnMarkerClickListener true
-                                }
-                            } else {
-                                googleMap.setOnMarkerClickListener {
-                                    startActivity(Intent(this, ListVehicleActivity::class.java))
-                                    return@setOnMarkerClickListener true
-                                }
+                            val getIntent = intent
+                            val bundle = getIntent.extras
+                            val cvData = bundle?.getParcelable<CustomerVehicle>("cvData")
+                            val vData = bundle?.getParcelable<Vehicle>("vData")
+//                            if (cvData != null) {
+//                                googleMap.setOnMarkerClickListener {
+//                                    startActivity(Intent(this, ServiceActivity::class.java))
+//                                    return@setOnMarkerClickListener true
+//                                }
+//                            } else {
+//                                googleMap.setOnMarkerClickListener {
+//                                    startActivity(Intent(this, ListVehicleActivity::class.java))
+//                                    return@setOnMarkerClickListener true
+//                                }
+                            googleMap.setOnMarkerClickListener {
+                                val intent = Intent(this, AgencyDetailActivity::class.java)
+                                val bundleAgencyMapsActivity = Bundle()
+                                bundleAgencyMapsActivity.putParcelable("cvData", cvData)
+                                bundleAgencyMapsActivity.putParcelable("vData", vData)
+                                bundleAgencyMapsActivity.putString("agencyName", agency.agencyName)
+                                bundleAgencyMapsActivity.putString(
+                                    "agencyWorkTime", agency.agencyWorkTime
+                                )
+                                bundleAgencyMapsActivity.putString(
+                                    "agencyName", agency.agencyPhoneNum
+                                )
+                                intent.putExtras(bundleAgencyMapsActivity)
+                                startActivity(intent)
+
+                                return@setOnMarkerClickListener true
                             }
                         }
                     }
@@ -151,7 +173,7 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
-    // get current location --------------------------------------------------------------end
+// get current location --------------------------------------------------------------end
 
     // Cấp quyền truy cập ------------------------------------------------------------------------
     override fun onRequestPermissionsResult(
