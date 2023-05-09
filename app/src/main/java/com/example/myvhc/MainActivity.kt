@@ -20,7 +20,6 @@ import com.example.myvhc.drawerActivity.GuaranActivity
 import com.example.myvhc.fragment.FragmentAgency
 import com.example.myvhc.fragment.FragmentHome
 import com.example.myvhc.fragment.FragmentMail
-import com.example.myvhc.fragment.FragmentProduct
 import com.example.myvhc.fragment.FragmentVehicle
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -31,66 +30,53 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val fragmentArrayList = ArrayList<Fragment>()
-    private var auth = FirebaseAuth.getInstance().currentUser
+    private val fragmentArrayList = arrayListOf<Fragment>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Log.d("cccp", "${auth?.uid}")
-
-
         fragmentArrayList.add(FragmentHome())
         fragmentArrayList.add(FragmentVehicle())
-        fragmentArrayList.add(FragmentProduct())
         fragmentArrayList.add(FragmentAgency())
         fragmentArrayList.add(FragmentMail())
 
-        val adapterViewPager = AdapterViewPager(this, fragmentArrayList)
+        binding.pagerMain.adapter = AdapterViewPager(this, fragmentArrayList)
 
-        //hiện các trang fragment main ở pager
-        binding.pagerMain.adapter = adapterViewPager
-
-        //lướt để đổi fragment
         binding.pagerMain.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                when (position) {
-                    0 -> binding.bottomNav.selectedItemId = R.id.home
-                    1 -> binding.bottomNav.selectedItemId = R.id.vehicle
-                    2 -> binding.bottomNav.selectedItemId = R.id.product
-                    3 -> binding.bottomNav.selectedItemId = R.id.agency
-                    4 -> binding.bottomNav.selectedItemId = R.id.mail
+                binding.bottomNav.selectedItemId = when (position) {
+                    0 -> R.id.home
+                    1 -> R.id.vehicle
+                    2 -> R.id.agency
+                    else -> R.id.mail
                 }
                 super.onPageSelected(position)
             }
         })
 
         binding.bottomNav.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.home -> binding.pagerMain.currentItem = 0
-                R.id.vehicle -> binding.pagerMain.currentItem = 1
-                R.id.product -> binding.pagerMain.currentItem = 2
-                R.id.agency -> binding.pagerMain.currentItem = 3
-                R.id.mail -> binding.pagerMain.currentItem = 4
+            binding.pagerMain.currentItem = when (item.itemId) {
+                R.id.home -> 0
+                R.id.vehicle -> 1
+                R.id.agency -> 2
+                else -> 3
             }
             true
         })
 
-        //code để bấm vào nút menu sẽ hiện drawer
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
         findViewById<View>(R.id.imgMenu).setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.END)
         }
 
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
-        val headerView = navigationView.getHeaderView(0)
-        val userInTextView = headerView.findViewById<TextView>(R.id.userName)
-        userInTextView.text = auth?.displayName
+        val userInTextView = navigationView.getHeaderView(0).findViewById<TextView>(R.id.userName)
+        userInTextView.text = FirebaseAuth.getInstance().currentUser?.displayName
 
-        navigationView.setNavigationItemSelectedListener {
-            when (it.itemId) {
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
                 R.id.nav_guaran -> {
                     startActivity(Intent(this, GuaranActivity::class.java))
                     drawerLayout.closeDrawer(GravityCompat.END)
@@ -106,9 +92,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.menu_drawer, menu)
-        return super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.menu_drawer, menu)
+        return true
     }
 
     private fun signOut() {
@@ -118,5 +103,4 @@ class MainActivity : AppCompatActivity() {
         googleSignInClient.signOut()
         startActivity(Intent(this, LogInActivity::class.java))
     }
-
 }

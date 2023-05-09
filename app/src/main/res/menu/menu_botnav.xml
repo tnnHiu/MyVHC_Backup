@@ -13,11 +13,6 @@
         android:title="@string/my_vehicle"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/product"
-        android:icon="@drawable/ic_baseline_directions_car_24"
-        android:title="@string/product"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/agency"
         android:icon="@drawable/ic_baseline_location_on_24"
         android:title="@string/agency"

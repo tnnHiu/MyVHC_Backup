@@ -54,7 +54,13 @@ class AgencyDetailActivity : AppCompatActivity() {
                 intent.putExtras(bundleServiceActivity)
                 startActivity(intent)
             } else {
-                startActivity(Intent(this, ListVehicleActivity::class.java))
+                val intent = Intent(this, ListVehicleActivity::class.java)
+                val bundleListVehicleActivity = Bundle()
+                bundleListVehicleActivity.putString("agencyId", agencyId)
+                bundleListVehicleActivity.putString("agencyName", agencyName)
+                bundleListVehicleActivity.putString("agencyAddress", agencyAddress)
+                intent.putExtras(bundleListVehicleActivity)
+                startActivity(intent)
             }
         }
 
