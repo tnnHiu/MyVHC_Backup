@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true"
-    android:padding="20sp"
+    android:padding="30sp"
     tools:context=".fragment.FragmentVehicle">
     tools:context=".fragment_main.FragmentVehicle">
 
