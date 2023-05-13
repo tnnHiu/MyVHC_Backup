@@ -5,10 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.myvhc.AgencyMapsActivity
 import com.example.myvhc.MainActivity
 import com.example.myvhc.R
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.example.myvhc.databinding.ActivityLoginBinding
+import com.example.myvhc.myVHCActivity.AddMotorActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -86,11 +88,23 @@ class LogInActivity : AppCompatActivity() {
 
     //đăng nhập thành công -> trang home
     private fun updateUI(user: FirebaseUser?) {
+
+
+
+        if (user?.email == "hieutnn.work@gmail.com") {
+            val intent = Intent(applicationContext, AddMotorActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+        }
+
         if (user != null) {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
             finish()
+            return
         }
+
     }
 
     //mở trang home bằng gmail đã đăng nhập khi mở app
