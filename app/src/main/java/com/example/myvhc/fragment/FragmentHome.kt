@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.myvhc.admin.DashboardAdminActivity
 import com.example.myvhc.databinding.FragmentHomeBinding
 import com.example.myvhc.serviceActivity.AgencyDetailActivity
 
@@ -20,7 +21,7 @@ class FragmentHome : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.test.setOnClickListener{
-            startActivity(Intent(context, AgencyDetailActivity::class.java))
+            startActivity(Intent(context, DashboardAdminActivity::class.java))
         }
 
         return binding.root
