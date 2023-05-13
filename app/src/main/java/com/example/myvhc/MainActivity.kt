@@ -28,7 +28,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-
+    private var auth = FirebaseAuth.getInstance().currentUser
     private lateinit var binding: ActivityMainBinding
     private val fragmentArrayList = arrayListOf<Fragment>()
 
@@ -36,12 +36,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         fragmentArrayList.add(FragmentHome())
         fragmentArrayList.add(FragmentVehicle())
         fragmentArrayList.add(FragmentAgency())
         fragmentArrayList.add(FragmentMail())
-
+        Log.i("aaa", auth.toString())
         binding.pagerMain.adapter = AdapterViewPager(this, fragmentArrayList)
 
         binding.pagerMain.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -89,6 +88,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
