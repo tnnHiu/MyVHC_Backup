@@ -56,6 +56,7 @@ class ServiceActivity : AppCompatActivity() {
             val serviceDate = binding.txtDate.text.toString()
             val serviceHours = binding.txtTime.text.toString()
             val describe = binding.edtDescribe.text.toString()
+            val status = "0"
 
             // Kiểm tra ràng buộc về thời gian
             val currentTime = Calendar.getInstance()
@@ -71,7 +72,14 @@ class ServiceActivity : AppCompatActivity() {
             }
 
             val serviceBookingForm = ServiceBookingForm(
-                agencyId, customerId, vehicleId, creationDate, serviceDate, serviceHours, describe
+                agencyId,
+                customerId,
+                vehicleId,
+                creationDate,
+                serviceDate,
+                serviceHours,
+                describe,
+                status
             )
             orderService(serviceBookingForm)
         }

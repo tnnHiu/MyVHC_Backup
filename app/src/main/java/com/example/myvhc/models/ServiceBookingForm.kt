@@ -10,9 +10,11 @@ data class ServiceBookingForm(
     var creationDate: String? = null,
     var serviceDate: String? = null,
     var serviceHours: String? = null,
-    var describe: String? = null
+    var describe: String? = null,
+    val status: String? = null
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -31,6 +33,7 @@ data class ServiceBookingForm(
         parcel.writeString(serviceDate)
         parcel.writeString(serviceHours)
         parcel.writeString(describe)
+        parcel.writeString(status)
     }
 
     override fun describeContents(): Int {
@@ -47,4 +50,5 @@ data class ServiceBookingForm(
         }
     }
 }
+
 
