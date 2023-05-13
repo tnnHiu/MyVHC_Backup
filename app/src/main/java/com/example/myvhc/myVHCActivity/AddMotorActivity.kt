@@ -62,25 +62,39 @@ class AddMotorActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        setExpandableClickListener(binding.btnExpand1, binding.layoutExpandable1)
-        setExpandableClickListener(binding.btnExpand2, binding.layoutExpandable2)
-        setExpandableClickListener(binding.btnExpand3, binding.layoutExpandable3)
-    }
-
-    private fun setExpandableClickListener(button: View, layout: View) {
-        button.setOnClickListener {
-            if (layout.visibility == View.GONE) {
+        binding.btnExpand1.setOnClickListener {
+            if (binding.layoutExpandable1.visibility == View.GONE) {
                 TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
-                layout.visibility = View.VISIBLE
-                button.setBackgroundResource(R.drawable.ic_expand)
+                binding.layoutExpandable1.visibility = View.VISIBLE
+                binding.btnExpand1.setImageResource(R.drawable.ic_expand)
             } else {
                 TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
-                layout.visibility = View.GONE
-                button.setBackgroundResource(R.drawable.ic_collapse)
-            }
+                binding.layoutExpandable1.visibility = View.GONE
+                binding.btnExpand1.setImageResource(R.drawable.ic_collapse)            }
+        }
+
+        binding.btnExpand2.setOnClickListener {
+            if (binding.layoutExpandable2.visibility == View.GONE) {
+                TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
+                binding.layoutExpandable2.visibility = View.VISIBLE
+                binding.btnExpand2.setImageResource(R.drawable.ic_expand)
+            } else {
+                TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
+                binding.layoutExpandable2.visibility = View.GONE
+                binding.btnExpand2.setImageResource(R.drawable.ic_collapse)            }
+        }
+
+        binding.btnExpand3.setOnClickListener {
+            if (binding.layoutExpandable3.visibility == View.GONE) {
+                TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
+                binding.layoutExpandable3.visibility = View.VISIBLE
+                binding.btnExpand3.setImageResource(R.drawable.ic_expand)
+            } else {
+                TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
+                binding.layoutExpandable3.visibility = View.GONE
+                binding.btnExpand3.setImageResource(R.drawable.ic_collapse)            }
         }
     }
-
 
     private fun addCustomerVehicle(cvData: List<CustomerVehicle>, vData: List<Vehicle>) {
         binding.btnAddVeicle.setOnClickListener {
@@ -110,6 +124,3 @@ class AddMotorActivity : AppCompatActivity() {
         }
     }
 }
-
-
-

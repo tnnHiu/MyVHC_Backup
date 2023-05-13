@@ -80,5 +80,6 @@
     <string name="choose_vehicle">Choose Vehicle</string>
     <string name="please_select_a_date">Please select a date</string>
     <string name="please_select_a_time">Please select a time</string>
+    <string name="honda_dealer">Honda dealer</string>
 
 </resources>

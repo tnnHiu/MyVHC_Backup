@@ -72,9 +72,9 @@
 
             <EditText
                 android:id="@+id/edtFrameNum"
-                android:layout_width="297dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="36dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:autofillHints=""
                 android:background="@drawable/button_rectangle_invisible"

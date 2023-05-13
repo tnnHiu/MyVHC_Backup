@@ -22,9 +22,6 @@ class FragmentAgency : Fragment() {
         binding.motorbike.setOnClickListener {
             startActivity(Intent(context, AgencyMapsActivity::class.java))
         }
-        binding.car.setOnClickListener {
-            startActivity(Intent(context, AgencyMapsActivity::class.java))
-        }
         return binding.root
     }
 }
