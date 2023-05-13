@@ -16,6 +16,7 @@ import com.example.myvhc.models.CustomerVehicle
 import com.example.myvhc.models.ServiceBookingForm
 import com.example.myvhc.models.Vehicle
 import com.example.myvhc.viewmodels.RepairHistoryViewModel
+import kotlin.math.log
 
 class VehicleDetailActivity : AppCompatActivity() {
 
@@ -60,20 +61,19 @@ class VehicleDetailActivity : AppCompatActivity() {
             val rHList = historyViewModel.rHList.value!!
             val agencyList = historyViewModel.agencyList.value!!
             val dataSorted = arrayDataSynchronization(rHList, agencyList, vehicleId)
-            setupRecyclerView(dataSorted, vehicleId)
+            setupRecyclerView(dataSorted)
         })
-
     }
 
 
     private fun setupRecyclerView(
-        data: List<Pair<ServiceBookingForm?, Agency>>, vehicleId: String
+        data: List<Pair<ServiceBookingForm?, Agency>>
     ) {
         val recyclerView = binding.rvHistoryRepair
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = RepairHistoryAdapter(vehicleId, data)
+        Log.d("aaaa", data.toString())
+        recyclerView.adapter = RepairHistoryAdapter(data)
     }
-
 
     private fun arrayDataSynchronization(
         rHList: ArrayList<ServiceBookingForm>, agencyList: ArrayList<Agency>, vehicleId: String
@@ -82,10 +82,11 @@ class VehicleDetailActivity : AppCompatActivity() {
         val rHIds = filteredRH.map { it.agencyId }.toHashSet()
         val filteredVData = agencyList.filter { rHIds.contains(it.agencyId) }
         val combinedList = filteredVData.map { agency ->
-            val matchingRH = filteredRH.find { it.agencyId == agency.agencyId }
-            Pair(matchingRH, agency)
-        }
-        return combinedList.sortedWith(compareBy { it.first?.agencyId })
+            val matchingRH = filteredRH.filter { it.agencyId == agency.agencyId }
+            matchingRH.map { Pair(it, agency) }
+        }.flatten()
+        return combinedList.sortedBy { it.first.agencyId }
     }
+
 
 }

@@ -1,5 +1,6 @@
 package com.example.myvhc.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,13 +10,12 @@ import com.example.myvhc.models.ServiceBookingForm
 
 
 class RepairHistoryAdapter(
-    private val vehicleId: String, private val data: List<Pair<ServiceBookingForm?, Agency>>
+    private val data: List<Pair<ServiceBookingForm?, Agency>>
 ) : RecyclerView.Adapter<RepairHistoryAdapter.ViewHolder>() {
 
     inner class ViewHolder(
         val binding: ItemRepairHistoryBinding,
-    ) : RecyclerView.ViewHolder(binding.root) {
-    }
+    ) : RecyclerView.ViewHolder(binding.root) {}
 
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
@@ -33,6 +33,7 @@ class RepairHistoryAdapter(
     }
 
     override fun getItemCount(): Int {
+
         return data.size
     }
 }
