@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myvhc.R
 import com.example.myvhc.adapter.AdapterViewPager
-import com.example.myvhc.admin.Fragment.AdminAgencyFragment
-import com.example.myvhc.admin.Fragment.AdminCustomerVHCFragment
-import com.example.myvhc.admin.Fragment.AdminServiceFragment
-import com.example.myvhc.admin.Fragment.AdminVehicleFragment
+import com.example.myvhc.admin.fragment.AdminAgencyFragment
+import com.example.myvhc.admin.fragment.AdminCustomerVHCFragment
+import com.example.myvhc.admin.fragment.AdminServiceFragment
+import com.example.myvhc.admin.fragment.AdminVehicleFragment
 import com.example.myvhc.authActivity.LogInActivity
 import com.example.myvhc.databinding.ActivityDashboardAdminBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
