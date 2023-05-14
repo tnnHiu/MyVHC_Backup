@@ -90,13 +90,12 @@ class LogInActivity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
 
 
-
-        if (user?.email == "hieutnn.work@gmail.com") {
-            val intent = Intent(applicationContext, AddMotorActivity::class.java)
-            startActivity(intent)
-            finish()
-            return
-        }
+//        if (user?.email == "hieutnn.work@gmail.com") {
+//            val intent = Intent(applicationContext, AddMotorActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//            return
+//        }
 
         if (user != null) {
             val intent = Intent(applicationContext, MainActivity::class.java)

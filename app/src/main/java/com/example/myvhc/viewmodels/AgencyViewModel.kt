@@ -29,14 +29,12 @@ class AgencyViewModel : ViewModel() {
                     for (agency in snapshot.children) {
                         val dataAgency = agency.getValue(Agency::class.java)
                         if (dataAgency != null) {
-                            Log.d("agencyData", dataAgency.toString())
                             agencyList.value?.add(dataAgency)
                         }
                     }
                     agencyListSize.value = agencyList.value?.size
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
             }
         })

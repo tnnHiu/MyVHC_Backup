@@ -24,9 +24,9 @@ class VehicleViewModel : ViewModel() {
 
     private fun getData() {
         customerVehicleRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot1: DataSnapshot) {
-                if (snapshot1.exists()) {
-                    for (data in snapshot1.children) {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (data in snapshot.children) {
                         val cvData = data.getValue(CustomerVehicle::class.java)
                         if (cvData != null) {
                             cvList.value?.add(cvData)
