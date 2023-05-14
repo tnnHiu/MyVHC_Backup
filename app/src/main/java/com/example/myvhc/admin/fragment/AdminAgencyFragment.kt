@@ -16,7 +16,7 @@ class AdminAgencyFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         binding = FragmentAdminAgencyBinding.inflate(layoutInflater, container, false)
 
         binding.btnAdd.setOnClickListener {
