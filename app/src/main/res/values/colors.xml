@@ -16,4 +16,5 @@
     <color name="gray">#B6A2A2</color>
     <color name="red">#F81100</color>
     <color name="background_2">#272727</color>
+    <color name="invisible">#00FFFFFF</color>
 </resources>

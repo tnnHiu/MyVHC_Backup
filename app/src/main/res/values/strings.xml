@@ -82,5 +82,12 @@
     <string name="please_select_a_time">Please select a time</string>
     <string name="honda_dealer">Honda dealer</string>
     <string name="customer">Customer</string>
+    <string name="service">Service</string>
+    <string name="vehicle">Vehicle</string>
+    <string name="user_s_vehicle">User\'s vehicle</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

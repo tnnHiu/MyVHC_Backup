@@ -79,4 +79,9 @@
     <string name="please_select_a_time">Vui lòng chọn giờ</string>
     <string name="honda_dealer">Đại lý phân phối Honda</string>
     <string name="customer">Khách hàng</string>
+    <string name="service">Dịch vụ</string>
+    <string name="vehicle">Xe</string>
+    <string name="user_s_vehicle">Xe người dùng</string>
+    <string name="update">Sửa</string>
+    <string name="delete">Xóa</string>
 </resources>

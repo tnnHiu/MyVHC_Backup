@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ad_vehicle"
+        android:icon="@drawable/vehicle_logo"
+        android:title="@string/vehicle"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/ad_agency"
+        android:icon="@drawable/agency_logo"
+        android:title="@string/agency"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/ad_customer"
+        android:icon="@drawable/customer_logo"
+        android:title="@string/customer"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/ad_customer_vehicle"
+        android:icon="@drawable/customer_vehicle_logo"
+        android:title="@string/user_s_vehicle"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/ad_service"
+        android:icon="@drawable/service_logo"
+        android:title="@string/service"
+        app:showAsAction="ifRoom" />
+
+</menu>
