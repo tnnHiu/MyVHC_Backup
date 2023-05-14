@@ -22,16 +22,20 @@
         android:theme="@style/Theme.MyVHC"
         tools:targetApi="31">
         <activity
+            android:name=".admin.activity.AdminServiceDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.activity.AdminCustomerVHCDetailActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".admin.activity.AdminAgencyDetailActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".admin.activity.AdminVehicleDetailActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".admin.DashboardAdminActivity"
-            android:exported="true" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".myVHCActivity.ScanActivity"
             android:exported="false" />
@@ -77,7 +81,11 @@
         <activity
             android:name=".authActivity.LogInActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"

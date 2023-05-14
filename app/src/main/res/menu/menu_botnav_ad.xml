@@ -13,11 +13,6 @@
         android:title="@string/agency"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/ad_customer"
-        android:icon="@drawable/customer_logo"
-        android:title="@string/customer"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/ad_customer_vehicle"
         android:icon="@drawable/customer_vehicle_logo"
         android:title="@string/user_s_vehicle"

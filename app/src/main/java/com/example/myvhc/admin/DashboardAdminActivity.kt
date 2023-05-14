@@ -8,7 +8,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.myvhc.R
 import com.example.myvhc.adapter.AdapterViewPager
 import com.example.myvhc.admin.Fragment.AdminAgencyFragment
-import com.example.myvhc.admin.Fragment.AdminCustomerFragment
 import com.example.myvhc.admin.Fragment.AdminCustomerVHCFragment
 import com.example.myvhc.admin.Fragment.AdminServiceFragment
 import com.example.myvhc.admin.Fragment.AdminVehicleFragment
@@ -38,7 +37,6 @@ class DashboardAdminActivity : AppCompatActivity() {
 
         fragmentArrayList.add(AdminVehicleFragment())
         fragmentArrayList.add(AdminAgencyFragment())
-        fragmentArrayList.add(AdminCustomerFragment())
         fragmentArrayList.add(AdminCustomerVHCFragment())
         fragmentArrayList.add(AdminServiceFragment())
 
@@ -49,8 +47,7 @@ class DashboardAdminActivity : AppCompatActivity() {
                 binding.bottomNav.selectedItemId = when (position) {
                     0 -> R.id.ad_vehicle
                     1 -> R.id.ad_agency
-                    2 -> R.id.ad_customer
-                    3 -> R.id.ad_customer_vehicle
+                    2 -> R.id.ad_customer_vehicle
                     else -> R.id.ad_service
                 }
                 super.onPageSelected(position)
@@ -61,9 +58,8 @@ class DashboardAdminActivity : AppCompatActivity() {
             binding.pagerMain.currentItem = when (item.itemId) {
                 R.id.ad_vehicle -> 0
                 R.id.ad_agency -> 1
-                R.id.ad_customer-> 2
-                R.id.ad_customer_vehicle -> 3
-                else -> 4
+                R.id.ad_customer_vehicle -> 2
+                else -> 3
             }
             true
         })
