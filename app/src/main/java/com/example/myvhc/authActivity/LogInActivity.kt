@@ -8,6 +8,7 @@ import android.util.Log
 import com.example.myvhc.AgencyMapsActivity
 import com.example.myvhc.MainActivity
 import com.example.myvhc.R
+import com.example.myvhc.admin.DashboardAdminActivity
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.example.myvhc.databinding.ActivityLoginBinding
 import com.example.myvhc.myVHCActivity.AddMotorActivity
@@ -90,12 +91,12 @@ class LogInActivity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
 
 
-//        if (user?.email == "hieutnn.work@gmail.com") {
-//            val intent = Intent(applicationContext, AddMotorActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//            return
-//        }
+        if (user?.email == "antoannguyen66@gmail.com") {
+            val intent = Intent(applicationContext, DashboardAdminActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+        }
 
         if (user != null) {
             val intent = Intent(applicationContext, MainActivity::class.java)
