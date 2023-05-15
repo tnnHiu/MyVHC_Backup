@@ -79,24 +79,18 @@ class AddVehicleSheetFragment : BottomSheetDialogFragment() {
         return true
     }
 
-    private fun createVehicleFromInput(chassisNumber: String): Vehicle {
-        with(binding) {
-            val vehicleBrand = vehicleBrand.text.toString()
-            val vehicleCylinderCap = vehicleCylinderCap.text.toString()
-            val vehicleImg = vehicleImg.text.toString()
-            val vehicleModel = vehicleModel.text.toString()
-            val vehiclePrice = vehiclePrice.text.toString()
+    private fun createVehicleFromInput(chassisNumber: String): Vehicle = with(binding) {
+        val vehicleBrand = vehicleBrand.text.toString()
+        val vehicleCylinderCap = vehicleCylinderCap.text.toString() + "cc"
+        val vehicleImg = vehicleImg.text.toString()
+        val vehicleModel = vehicleModel.text.toString()
+        val vehiclePrice = vehiclePrice.text.toString() + " VNĐ"
 
-            return Vehicle(
-                chassisNumber,
-                vehicleBrand,
-                vehicleImg,
-                vehicleModel,
-                vehicleCylinderCap,
-                vehiclePrice
-            )
-        }
+        Vehicle(
+            chassisNumber, vehicleBrand, vehicleImg, vehicleModel, vehicleCylinderCap, vehiclePrice
+        )
     }
+
 
     private fun saveVehicleToDatabase(chassisNumber: String, vehicle: Vehicle) {
         dbRef.child(chassisNumber).setValue(vehicle)
