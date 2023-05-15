@@ -95,7 +95,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="@string/cyclinder_capacity"
+                            android:text="@string/cylinder_capacity"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -108,7 +108,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="@string/motor_model"
+                            android:text="@string/vehicle_model"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>

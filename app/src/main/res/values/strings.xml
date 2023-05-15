@@ -27,13 +27,13 @@
     <string name="your_location">Your location</string>
     <string name="motorbike_agency_dealer">Motorbike Agency Dealer</string>
     <string name="car_agency_dealer">Car Agency Dealer</string>
-    <string name="cyclinder_capacity">Cyclinder capacity</string>
+    <string name="cylinder_capacity">Cyclinder capacity</string>
     <string name="frame_number">Frame number</string>
     <string name="warranty_infomation">Warranty infomation</string>
     <string name="order_for_service">Order for service</string>
     <string name="more_detail">More detail</string>
-    <string name="motor_model">Motor Model</string>
-    <string name="motor_type">Motor Type</string>
+    <string name="vehicle_model">Vehicle Model</string>
+    <string name="vehicle_type">Vehicle Type</string>
     <string name="color">Color</string>
     <string name="replace_parts">Replace parts</string>
     <string name="standard_warranty_information">Standard warranty information</string>
@@ -43,7 +43,6 @@
     <string name="periodic_inspection_information_pi">Periodic inspection information (PI)</string>
     <string name="detail_and_order_for_service">Detail and Order for service</string>
     <string name="spare_parts_replacement_reminder">Spare parts replacement reminder</string>
-    <string name="motor_insurance">Motor Insurance</string>
     <string name="your_vehicle_does_not_have_insurance_information_please_update_to_receive_due_date_information">Your vehicle does not have insurance information, please update to receive due date information.</string>
     <string name="repair_history">Repair history</string>
     <string name="create_new">Create new</string>

@@ -44,7 +44,7 @@
             android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/cyclinder_capacity">
+            android:hint="@string/cylinder_capacity">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -78,7 +78,7 @@
             android:id="@+id/vehicleModel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/motor_model">
+            android:hint="@string/vehicle_model">
 
         </com.google.android.material.textfield.TextInputEditText>
 
