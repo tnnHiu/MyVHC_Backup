@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleBrand"
-            android:hint="vehicleBrand"/>
+            android:hint="@string/brand"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleChassisNum"
-            android:hint="vehicleChassisNum">
+            android:hint="@string/chassis_number">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleCylinderCap"
-            android:hint="vehicleCylinderCap">
+            android:hint="@string/cyclinder_capacity">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleModel"
-            android:hint="vehicleModel">
+            android:hint="@string/motor_model">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -95,24 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehiclePrice"
-            android:hint="vehiclePrice">
-
-        </com.google.android.material.textfield.TextInputEditText>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="20dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/vehicleType"
-            android:hint="vehicleType">
+            android:hint="@string/price">
 
         </com.google.android.material.textfield.TextInputEditText>
 

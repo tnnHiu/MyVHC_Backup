@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/creationDate"
-            android:hint="creationDate"/>
+            android:hint="@string/creation_date"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/describe"
-            android:hint="describe">
+            android:hint="@string/describe">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/serviceDate"
-            android:hint="serviceDate">
+            android:hint="@string/booked_date">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/serviceHours"
-            android:hint="serviceHours">
+            android:hint="@string/booked_hour">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -94,9 +94,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="status"
+            android:text="@string/status"
             android:textSize="16sp"
-            android:layout_marginStart="10dp"
             android:layout_gravity="center_vertical"/>
 
         <RadioGroup
@@ -104,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_horizontal"
+            android:gravity="end"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="20dp">
 

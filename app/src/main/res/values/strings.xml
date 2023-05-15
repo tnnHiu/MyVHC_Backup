@@ -106,5 +106,9 @@
     <string name="vehicle_id">Vehicle Id</string>
     <string name="creation_date">Creation Date</string>
     <string name="describe">Describe</string>
+    <string name="booked_date">Booked date</string>
+    <string name="status">Status</string>
+    <string name="booked_hour">Booked hour</string>
+    <string name="image">Image</string>
 
 </resources>

@@ -20,13 +20,13 @@ class AdminServiceFragment : Fragment() {
     ): View? {
         binding = FragmentAdminServiceBinding.inflate(layoutInflater, container, false)
 
-        binding.btnAdd.setOnClickListener {
-            startActivity(Intent(context, AdminServiceDetailActivity::class.java))
-        }
-
 //        binding.btnAdd.setOnClickListener {
-//            AddServiceSheetFragment().show(childFragmentManager, "newTaskTag")
+//            startActivity(Intent(context, AdminServiceDetailActivity::class.java))
 //        }
+
+        binding.btnAdd.setOnClickListener {
+            AddServiceSheetFragment().show(childFragmentManager, "newTaskTag")
+        }
 
         return binding.root
     }

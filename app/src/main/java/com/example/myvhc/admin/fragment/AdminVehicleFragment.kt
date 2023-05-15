@@ -20,13 +20,13 @@ class AdminVehicleFragment : Fragment() {
     ): View? {
         binding = FragmentAdminVehicleBinding.inflate(layoutInflater, container, false)
 
-//        binding.btnAdd.setOnClickListener {
-//            AddVehicleSheetFragment().show(childFragmentManager, "newTaskTag")
-//        }
-
         binding.btnAdd.setOnClickListener {
-            startActivity(Intent(context, AdminVehicleDetailActivity::class.java))
+            AddVehicleSheetFragment().show(childFragmentManager, "newTaskTag")
         }
+
+//        binding.btnAdd.setOnClickListener {
+//            startActivity(Intent(context, AdminVehicleDetailActivity::class.java))
+//        }
 
         return binding.root
     }

@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/customerId"
-            android:hint="customerId"/>
+            android:hint="@string/customer_id"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/licensePlate"
-            android:hint="licensePlate">
+            android:hint="@string/license_plates">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/purchaseDate"
-            android:hint="purchaseDate">
+            android:hint="@string/purchase_date">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleId"
-            android:hint="vehicleId">
+            android:hint="@string/vehicle_id">
 
         </com.google.android.material.textfield.TextInputEditText>
 

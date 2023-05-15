@@ -26,10 +26,10 @@
         android:layout_marginHorizontal="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/agencyAddress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyAddress"
-            android:hint="agencyAddress"/>
+            android:hint="@string/address" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/agencyId"
-            android:hint="agencyId">
+            android:hint="@string/agency_id">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/agencyLatitude"
-            android:hint="agencyLatitude">
+            android:hint="@string/latitude">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/agencyLongitude"
-            android:hint="agencyLongitude">
+            android:hint="@string/longitude">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/agencyName"
-            android:hint="agencyName">
+            android:hint="@string/name">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -112,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/agencyPhoneNum"
-            android:hint="agencyPhoneNum">
+            android:hint="@string/phone_number">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -129,7 +129,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/agencyWorkTime"
-            android:hint="agencyWorkTime">
+            android:hint="@string/work_time">
 
         </com.google.android.material.textfield.TextInputEditText>
 

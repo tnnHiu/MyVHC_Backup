@@ -115,7 +115,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="serviceDate"
+                            android:text="@string/booked_date"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -127,7 +127,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="serviceHours"
+                            android:text="@string/booked_hour"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -139,7 +139,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="status"
+                            android:text="@string/status"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -152,7 +152,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="vehicleId"
+                            android:text="@string/vehicle_id"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>

@@ -103,4 +103,8 @@
     <string name="vehicle_id">Mã xe</string>
     <string name="creation_date">Ngày tạo</string>
     <string name="describe">Mô tả</string>
+    <string name="booked_date">Ngày đã đặt</string>
+    <string name="status">Trạng thái</string>
+    <string name="booked_hour">Giờ đã đặt</string>
+    <string name="image">Hình ảnh</string>
 </resources>

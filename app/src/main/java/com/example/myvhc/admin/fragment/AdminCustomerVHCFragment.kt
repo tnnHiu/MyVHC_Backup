@@ -20,13 +20,13 @@ class AdminCustomerVHCFragment : Fragment() {
     ): View? {
         binding = FragmentAdminCustomerVHCBinding.inflate(layoutInflater, container, false)
 
-        binding.btnAdd.setOnClickListener {
-            startActivity(Intent(context, AdminCustomerVHCDetailActivity::class.java))
-        }
-
 //        binding.btnAdd.setOnClickListener {
-//            AddCustomerVehicleSheetFragment().show(childFragmentManager, "newTaskTag")
+//            startActivity(Intent(context, AdminCustomerVHCDetailActivity::class.java))
 //        }
+
+        binding.btnAdd.setOnClickListener {
+            AddCustomerVehicleSheetFragment().show(childFragmentManager, "newTaskTag")
+        }
 
         return binding.root
     }
