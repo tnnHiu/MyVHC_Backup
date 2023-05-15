@@ -130,7 +130,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/cyclinder_capacity"
+                            android:text="@string/cylinder_capacity"
                             android:textSize="12sp" />
 
                         <TextView

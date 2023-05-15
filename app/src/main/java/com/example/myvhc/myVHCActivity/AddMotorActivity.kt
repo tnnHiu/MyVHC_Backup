@@ -70,7 +70,8 @@ class AddMotorActivity : AppCompatActivity() {
             } else {
                 TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
                 binding.layoutExpandable1.visibility = View.GONE
-                binding.btnExpand1.setImageResource(R.drawable.ic_collapse)            }
+                binding.btnExpand1.setImageResource(R.drawable.ic_collapse)
+            }
         }
 
         binding.btnExpand2.setOnClickListener {
@@ -81,7 +82,8 @@ class AddMotorActivity : AppCompatActivity() {
             } else {
                 TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
                 binding.layoutExpandable2.visibility = View.GONE
-                binding.btnExpand2.setImageResource(R.drawable.ic_collapse)            }
+                binding.btnExpand2.setImageResource(R.drawable.ic_collapse)
+            }
         }
 
         binding.btnExpand3.setOnClickListener {
@@ -92,7 +94,8 @@ class AddMotorActivity : AppCompatActivity() {
             } else {
                 TransitionManager.beginDelayedTransition(binding.cardView, AutoTransition())
                 binding.layoutExpandable3.visibility = View.GONE
-                binding.btnExpand3.setImageResource(R.drawable.ic_collapse)            }
+                binding.btnExpand3.setImageResource(R.drawable.ic_collapse)
+            }
         }
     }
 

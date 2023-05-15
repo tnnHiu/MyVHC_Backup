@@ -4,11 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myvhc.R
+import com.example.myvhc.admin.DashboardAdminActivity
 import com.example.myvhc.admin.bottom_sheet.UpdateVehicleSheetFragment
 import com.example.myvhc.authActivity.LogInActivity
 import com.example.myvhc.databinding.ActivityAdminVehicleDetailBinding
+import com.example.myvhc.models.Vehicle
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.database.FirebaseDatabase
 
 class AdminVehicleDetailActivity : AppCompatActivity() {
 
@@ -19,8 +22,22 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         binding = ActivityAdminVehicleDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val vData = intent.getParcelableExtra<Vehicle>("vData")
+        val vDataUpdate = intent.getParcelableExtra<Vehicle>("vDataUpdate")
+        if (vDataUpdate != null) {
+            displayVehicleData(vDataUpdate)
+            intent.removeExtra("vDataUpdate")
+        } else {
+            vData?.let {
+                displayVehicleData(it)
+            }
+        }
+
         binding.btnUpdate.setOnClickListener {
-            UpdateVehicleSheetFragment().show(supportFragmentManager, "newTaskTag")
+            showUpdateVehicleSheetFragment(vData)
+        }
+        binding.btnDelete.setOnClickListener {
+            vData?.vehicleChassisNum?.let { deleteVehicle(it) }
         }
         binding.btnLogout.setOnClickListener {
             signOut()
@@ -29,7 +46,36 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             onBackPressed()
         }
+    }
 
+    private fun deleteVehicle(vehicleChassisNum: String) {
+        val dbRef = FirebaseDatabase.getInstance().getReference("vehicles").child(vehicleChassisNum)
+        dbRef.removeValue().addOnCompleteListener {
+            val intent = Intent(this, DashboardAdminActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
+    }
+
+    private fun displayVehicleData(vehicle: Vehicle) {
+        with(binding) {
+            txtVehicleBrand.text = vehicle.vehicleBrand
+            txtVehicleModel.text = vehicle.vehicleModel
+            txtVehicleImg.text = vehicle.vehicleImg
+            txtVehicleChassisNum.text = vehicle.vehicleChassisNum
+            txtCylinderCapacity.text = vehicle.vehicleCylinderCap
+            txtVehiclePrice.text = vehicle.vehiclePrice
+        }
+    }
+
+    private fun showUpdateVehicleSheetFragment(vData: Vehicle?) {
+        val bundle = Bundle().apply {
+            putParcelable("vData", vData)
+        }
+        val fragment = UpdateVehicleSheetFragment().apply {
+            arguments = bundle
+        }
+        fragment.show(supportFragmentManager, "newTaskTag")
     }
 
     private fun signOut() {
@@ -40,3 +86,5 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         startActivity(Intent(this, LogInActivity::class.java))
     }
 }
+
+

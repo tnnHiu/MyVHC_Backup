@@ -27,7 +27,7 @@
     <string name="your_location">Your location</string>
     <string name="motorbike_agency_dealer">Motorbike Agency Dealer</string>
     <string name="car_agency_dealer">Car Agency Dealer</string>
-    <string name="cyclinder_capacity">Cyclinder capacity</string>
+    <string name="cylinder_capacity">Cyclinder capacity</string>
     <string name="frame_number">Frame number</string>
     <string name="warranty_infomation">Warranty infomation</string>
     <string name="order_for_service">Order for service</string>
@@ -110,5 +110,6 @@
     <string name="status">Status</string>
     <string name="booked_hour">Booked hour</string>
     <string name="image">Image</string>
+    <string name="model">Model</string>
 
 </resources>
