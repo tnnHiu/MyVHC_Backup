@@ -29,11 +29,11 @@ class AdminVehicleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentAdminVehicleBinding.inflate(layoutInflater, container, false)
-
+        getData()
         binding.btnAdd.setOnClickListener {
             AddVehicleSheetFragment().show(childFragmentManager, "newTaskTag")
         }
-        getData()
+
         return binding.root
     }
 
