@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -79,11 +78,12 @@
                     </TableRow>
 
                     <TableRow>
+
                         <TextView
                             android:text="@string/agency_id"
                             android:padding="10dp"
                             android:background="@color/background_2"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:text="01/01/2000"
@@ -91,11 +91,12 @@
                     </TableRow>
 
                     <TableRow>
+
                         <TextView
                             android:text="@string/latitude"
                             android:padding="10dp"
                             android:background="@color/background_2"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:text="01/01/2000"
@@ -103,11 +104,12 @@
                     </TableRow>
 
                     <TableRow>
+
                         <TextView
                             android:text="@string/longitude"
                             android:padding="10dp"
                             android:background="@color/background_2"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:text="01/01/2000"
@@ -115,11 +117,12 @@
                     </TableRow>
 
                     <TableRow>
+
                         <TextView
                             android:text="@string/name"
                             android:padding="10dp"
                             android:background="@color/background_2"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:text="01/01/2000"
@@ -127,11 +130,12 @@
                     </TableRow>
 
                     <TableRow>
+
                         <TextView
                             android:text="@string/phone_number"
                             android:padding="10dp"
                             android:background="@color/background_2"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:text="46.160.000 VNĐ"
@@ -139,11 +143,12 @@
                     </TableRow>
 
                     <TableRow>
+
                         <TextView
                             android:text="@string/work_time"
                             android:padding="10dp"
                             android:background="@color/background_2"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:text="46.160.000 VNĐ"
@@ -168,7 +173,7 @@
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toStartOf="@+id/btnDelete"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tableLayout"/>
+            app:layout_constraintTop_toBottomOf="@id/tableLayout" />
 
         <TextView
             android:id="@+id/btnDelete"
@@ -182,7 +187,7 @@
             android:layout_marginTop="50dp"
             app:layout_constraintStart_toEndOf="@id/btnUpdate"
             app:layout_constraintTop_toBottomOf="@id/tableLayout"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
