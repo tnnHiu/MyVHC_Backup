@@ -43,6 +43,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="number"
             android:id="@+id/agencyLatitude"
             android:hint="@string/latitude">
 
@@ -60,6 +61,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="number"
             android:id="@+id/agencyLongitude"
             android:hint="@string/longitude">
 
@@ -94,6 +96,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="number"
             android:id="@+id/agencyPhoneNum"
             android:hint="@string/phone_number">
 

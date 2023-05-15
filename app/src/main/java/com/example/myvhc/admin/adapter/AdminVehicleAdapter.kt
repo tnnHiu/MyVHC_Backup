@@ -52,6 +52,6 @@ class AdminVehicleAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.loadImg().load(data[position].vehicleImg).into((holder.binding.imgVehicle))
-        holder.binding.vehicleChassisNum.text = data[position].vehicleChassisNum
+        holder.binding.vehicleChassisNum.text = data[position].vehicleModel
     }
 }

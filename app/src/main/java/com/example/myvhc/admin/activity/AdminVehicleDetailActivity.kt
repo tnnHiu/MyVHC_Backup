@@ -58,11 +58,11 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
             if (binding.imageVehicle.visibility == View.GONE) {
                 TransitionManager.beginDelayedTransition(binding.bodyLayout, AutoTransition())
                 binding.imageVehicle.visibility = View.VISIBLE
-                binding.btnExpand.setImageResource(R.drawable.ic_expand)
+                binding.btnExpand.setImageResource(R.drawable.ic_collapse)
             } else {
                 TransitionManager.beginDelayedTransition(binding.bodyLayout, AutoTransition())
                 binding.imageVehicle.visibility = View.GONE
-                binding.btnExpand.setImageResource(R.drawable.ic_collapse)
+                binding.btnExpand.setImageResource(R.drawable.ic_expand)
             }
         }
 
