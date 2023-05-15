@@ -139,7 +139,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/imageVehicle"
+            android:id="@+id/cardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
@@ -149,6 +149,7 @@
             app:cardCornerRadius="20dp">
 
             <ImageView
+                android:id="@+id/imageVehicle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/civic_type_r"/>
@@ -160,7 +161,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_expand"
-            app:layout_constraintTop_toBottomOf="@id/imageVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"

@@ -90,8 +90,9 @@ class LogInActivity : AppCompatActivity() {
     //đăng nhập thành công -> trang home
     private fun updateUI(user: FirebaseUser?) {
 
-
-        if (user?.email == "antoannguyen66@gmail.com") {
+//trinhnguyennhathieu@gmail.com
+//        antoannguyen66@gmail.com
+        if (user?.email == "trinhnguyennhathieu@gmail.com") {
             val intent = Intent(applicationContext, DashboardAdminActivity::class.java)
             startActivity(intent)
             finish()
