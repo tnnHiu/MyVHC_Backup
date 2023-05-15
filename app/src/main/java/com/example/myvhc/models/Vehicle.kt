@@ -7,14 +7,12 @@ import java.io.Serializable
 data class Vehicle(
     var vehicleChassisNum: String? = null,
     var vehicleBrand: String? = null,
-    var vehicleType: String? = null,
     var vehicleImg: String? = null,
     var vehicleModel: String? = null,
     var vehicleCylinderCap: String? = null,
     var vehiclePrice: String? = null,
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -27,7 +25,6 @@ data class Vehicle(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(vehicleChassisNum)
         parcel.writeString(vehicleBrand)
-        parcel.writeString(vehicleType)
         parcel.writeString(vehicleImg)
         parcel.writeString(vehicleModel)
         parcel.writeString(vehicleCylinderCap)
@@ -47,5 +44,4 @@ data class Vehicle(
             return arrayOfNulls(size)
         }
     }
-
 }

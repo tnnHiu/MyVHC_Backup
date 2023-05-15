@@ -11,33 +11,38 @@ import com.example.myvhc.models.Vehicle
 class AdminVehicleAdapter(
     private val data: ArrayList<Vehicle>
 ) : RecyclerView.Adapter<AdminVehicleAdapter.ViewHolder>() {
-//    private lateinit var mListener: OnItemClickListener
-//
-//    interface OnItemClickListener {
-//        fun onItemClick(position: Int)
-//    }
+    private lateinit var mListener: OnItemClickListener
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(clickListener: OnItemClickListener) {
+        mListener = clickListener
+    }
 
     inner class ViewHolder(
         val binding: ItemAdminVehicleBinding,
-//        clickListener: OnItemClickListener
+        clickListener: OnItemClickListener
     ) : RecyclerView.ViewHolder(binding.root) {
         fun loadImg(): RequestManager {
             return Glide.with(itemView)
         }
 
-//        init {
-//            itemView.setOnClickListener {
-//                clickListener.onItemClick(adapterPosition)
-//            }
-//        }
+        init {
+            itemView.setOnClickListener {
+                clickListener.onItemClick(adapterPosition)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ItemAdminVehicleBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
-        return ViewHolder(view,
-//            mListener
+        return ViewHolder(
+            view,
+            mListener
         )
     }
 

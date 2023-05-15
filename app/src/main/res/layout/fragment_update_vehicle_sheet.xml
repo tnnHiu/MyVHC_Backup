@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleCylinderCap"
-            android:hint="@string/cyclinder_capacity">
+            android:hint="@string/cylinder_capacity">
 
         </com.google.android.material.textfield.TextInputEditText>
 

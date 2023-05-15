@@ -3,10 +3,12 @@ package com.example.myvhc.admin.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.example.myvhc.R
 import com.example.myvhc.admin.bottom_sheet.UpdateVehicleSheetFragment
 import com.example.myvhc.authActivity.LogInActivity
 import com.example.myvhc.databinding.ActivityAdminVehicleDetailBinding
+import com.example.myvhc.models.Vehicle
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
@@ -18,6 +20,21 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAdminVehicleDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        val getIntent = intent
+        val bundle = getIntent.extras
+        val vData = bundle?.getParcelable<Vehicle>("vData")
+        if (vData != null) {
+            binding.txtVehicleBrand.text = vData.vehicleBrand.toString()
+            binding.txtVehicleModel.text = vData.vehicleModel.toString()
+            binding.txtVehicleImg.text = vData.vehicleImg.toString()
+//            Glide.with(this).load(vData.vehicleImg).into(binding.txtVehicleImg)
+            binding.txtVehicleChassisNum.text = vData.vehicleChassisNum.toString()
+            binding.txtCylinderCapacity.text = vData.vehicleCylinderCap.toString()
+            binding.txtVehiclePrice.text = vData.vehiclePrice.toString()
+        }
+
 
         binding.btnUpdate.setOnClickListener {
             UpdateVehicleSheetFragment().show(supportFragmentManager, "newTaskTag")
@@ -31,6 +48,7 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         }
 
     }
+
 
     private fun signOut() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
