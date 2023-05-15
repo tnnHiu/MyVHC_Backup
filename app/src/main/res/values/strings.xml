@@ -74,7 +74,7 @@
     <string name="add_a_description_of_the_vehicle_s_fault_the_detailed_description_helps_the_dealer_better_prepare_to_take_care_of_your_vehicle">Add a description of the vehicle\'s fault. The detailed description helps the dealer better prepare to take care of your vehicle</string>
     <string name="your_car_details">Your car details</string>
     <string name="actual_pictures_of_the_car">Actual pictures of the car</string>
-    <string name="brand">Brand:</string>
+    <string name="brand">Brand</string>
     <string name="chassis_number">Chassis Number</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="choose_vehicle">Choose Vehicle</string>
@@ -87,7 +87,28 @@
     <string name="user_s_vehicle">User\'s vehicle</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">Add</string>
+    <string name="add_agency">Add agency</string>
+    <string name="add_customer_vehicle">Add customer vehicle</string>
+    <string name="add_service">Add service</string>
+    <string name="save">Save</string>
+    <string name="done">Done</string>
+    <string name="not_yet">Not yet</string>
+    <string name="price">Price</string>
+    <string name="address">Address</string>
+    <string name="agency_id">Agency Id</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="name">Name</string>
+    <string name="customer_id">Customer Id</string>
+    <string name="license_plates">License Plates</string>
+    <string name="purchase_date">Purchase Date</string>
+    <string name="vehicle_id">Vehicle Id</string>
+    <string name="creation_date">Creation Date</string>
+    <string name="describe">Describe</string>
+    <string name="booked_date">Booked date</string>
+    <string name="status">Status</string>
+    <string name="booked_hour">Booked hour</string>
+    <string name="image">Image</string>
 
 </resources>

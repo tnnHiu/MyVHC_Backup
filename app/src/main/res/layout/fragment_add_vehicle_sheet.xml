@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleBrand"
-            android:hint="vehicleBrand"/>
+            android:hint="@string/brand"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleChassisNum"
-            android:hint="vehicleChassisNum">
+            android:hint="@string/chassis_number">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleCylinderCap"
-            android:hint="vehicleCylinderCap">
+            android:hint="@string/cyclinder_capacity">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleImg"
-            android:hint="vehicleImg">
+            android:hint="@string/image">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehicleModel"
-            android:hint="vehicleModel">
+            android:hint="@string/motor_model">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -112,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/vehiclePrice"
-            android:hint="vehiclePrice">
+            android:hint="@string/price">
 
         </com.google.android.material.textfield.TextInputEditText>
 

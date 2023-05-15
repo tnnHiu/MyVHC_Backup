@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.myvhc.admin.activity.AdminAgencyDetailActivity
+import com.example.myvhc.admin.bottom_sheet.AddAgencySheetFragment
 import com.example.myvhc.databinding.FragmentAdminAgencyBinding
 
 class AdminAgencyFragment : Fragment() {
@@ -19,13 +20,13 @@ class AdminAgencyFragment : Fragment() {
     ): View{
         binding = FragmentAdminAgencyBinding.inflate(layoutInflater, container, false)
 
-        binding.btnAdd.setOnClickListener {
-            startActivity(Intent(context, AdminAgencyDetailActivity::class.java))
-        }
-
 //        binding.btnAdd.setOnClickListener {
-//            AddAgencySheetFragment().show(childFragmentManager, "newTaskTag")
+//            startActivity(Intent(context, AdminAgencyDetailActivity::class.java))
 //        }
+
+        binding.btnAdd.setOnClickListener {
+            AddAgencySheetFragment().show(childFragmentManager, "newTaskTag")
+        }
 
         return binding.root
     }

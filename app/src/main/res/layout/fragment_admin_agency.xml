@@ -37,7 +37,7 @@
             android:background="@drawable/button_rectangle"
             android:gravity="center"
             android:paddingVertical="5dp"
-            android:text="Add agency"
+            android:text="@string/add_agency"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintTop_toTopOf="parent" />

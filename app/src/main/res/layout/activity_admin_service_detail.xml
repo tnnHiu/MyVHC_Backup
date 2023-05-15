@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_main"
-    tools:context=".admin.activity.AdminAgencyDetailActivity">
+    tools:context=".admin.activity.AdminServiceDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerLayout"
@@ -65,22 +65,21 @@
                     android:layout_height="wrap_content">
 
                     <TableRow>
-
                         <TextView
-                            android:text="@string/address"
+                            android:text="@string/agency_id"
                             android:textStyle="bold"
                             android:background="@color/background_2"
                             android:padding="10dp" />
 
                         <TextView
-                            android:text="37 Điện Biên Phủ, Chính Gián, Thanh Khê, Đà Nẵng"
+                            android:text="Ngày sinh"
                             android:padding="10dp" />
 
                     </TableRow>
 
                     <TableRow>
                         <TextView
-                            android:text="@string/agency_id"
+                            android:text="@string/creation_date"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -92,7 +91,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="@string/latitude"
+                            android:text="@string/customer_id"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -104,7 +103,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="@string/longitude"
+                            android:text="@string/describe"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -116,7 +115,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="@string/name"
+                            android:text="@string/booked_date"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -128,7 +127,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="@string/phone_number"
+                            android:text="@string/booked_hour"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>
@@ -140,7 +139,20 @@
 
                     <TableRow>
                         <TextView
-                            android:text="@string/work_time"
+                            android:text="@string/status"
+                            android:padding="10dp"
+                            android:background="@color/background_2"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:text="46.160.000 VNĐ"
+                            android:padding="10dp" />
+
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:text="@string/vehicle_id"
                             android:padding="10dp"
                             android:background="@color/background_2"
                             android:textStyle="bold"/>

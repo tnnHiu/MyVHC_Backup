@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="50dp"
-    tools:context=".admin.bottom_sheet.UpdateAgencySheetFragment">
+    tools:context=".admin.bottom_sheet.AddCustomerVehicleSheetFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/agency"
+        android:text="@string/user_s_vehicle"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
@@ -28,8 +28,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyAddress"
-            android:hint="@string/address"/>
+            android:id="@+id/customerId"
+            android:hint="@string/customer_id"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,8 +43,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyLatitude"
-            android:hint="@string/latitude">
+            android:id="@+id/licensePlate"
+            android:hint="@string/license_plates">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -60,8 +60,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyLongitude"
-            android:hint="@string/longitude">
+            android:id="@+id/purchaseDate"
+            android:hint="@string/purchase_date">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -77,42 +77,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyName"
-            android:hint="@string/name">
-
-        </com.google.android.material.textfield.TextInputEditText>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="20dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/agencyPhoneNum"
-            android:hint="@string/phone_number">
-
-        </com.google.android.material.textfield.TextInputEditText>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="20dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/agencyWorkTime"
-            android:hint="@string/work_time">
+            android:id="@+id/vehicleId"
+            android:hint="@string/vehicle_id">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -129,6 +95,6 @@
         android:paddingVertical="5dp"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="20dp"
-        android:text="@string/save"/>
+        android:text="@string/add"/>
 
 </LinearLayout>

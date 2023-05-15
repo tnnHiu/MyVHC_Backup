@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="50dp"
-    tools:context=".admin.bottom_sheet.UpdateAgencySheetFragment">
+    tools:context=".admin.bottom_sheet.UpdateServiceSheetFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/agency"
+        android:text="@string/service"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
@@ -28,8 +28,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyAddress"
-            android:hint="@string/address"/>
+            android:id="@+id/creationDate"
+            android:hint="@string/creation_date"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,8 +43,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyLatitude"
-            android:hint="@string/latitude">
+            android:id="@+id/describe"
+            android:hint="@string/describe">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -60,8 +60,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyLongitude"
-            android:hint="@string/longitude">
+            android:id="@+id/serviceDate"
+            android:hint="@string/booked_date">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -77,46 +77,52 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/agencyName"
-            android:hint="@string/name">
+            android:id="@+id/serviceHours"
+            android:hint="@string/booked_hour">
 
         </com.google.android.material.textfield.TextInputEditText>
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="20dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/agencyPhoneNum"
-            android:hint="@string/phone_number">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="20dp">
 
-        </com.google.android.material.textfield.TextInputEditText>
+            <RadioButton
+                android:id="@+id/radioButtonYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@string/done"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <RadioButton
+                android:id="@+id/radioButtonNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/not_yet"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="20dp">
+        </RadioGroup>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/agencyWorkTime"
-            android:hint="@string/work_time">
-
-        </com.google.android.material.textfield.TextInputEditText>
-
-    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/saveButton"

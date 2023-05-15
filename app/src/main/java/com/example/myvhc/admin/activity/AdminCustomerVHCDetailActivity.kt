@@ -4,23 +4,23 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myvhc.R
-import com.example.myvhc.admin.bottom_sheet.UpdateVehicleSheetFragment
+import com.example.myvhc.admin.bottom_sheet.UpdateCustomerVehicleSheetFragment
 import com.example.myvhc.authActivity.LogInActivity
-import com.example.myvhc.databinding.ActivityAdminVehicleDetailBinding
+import com.example.myvhc.databinding.ActivityAdminCustomerVhcdetailBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
-class AdminVehicleDetailActivity : AppCompatActivity() {
+class AdminCustomerVHCDetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAdminVehicleDetailBinding
+    private lateinit var binding: ActivityAdminCustomerVhcdetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAdminVehicleDetailBinding.inflate(layoutInflater)
+        binding = ActivityAdminCustomerVhcdetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.btnUpdate.setOnClickListener {
-            UpdateVehicleSheetFragment().show(supportFragmentManager, "newTaskTag")
+            UpdateCustomerVehicleSheetFragment().show(supportFragmentManager, "newTaskTag")
         }
         binding.btnLogout.setOnClickListener {
             signOut()
