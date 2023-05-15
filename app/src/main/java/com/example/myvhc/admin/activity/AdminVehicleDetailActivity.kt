@@ -1,14 +1,18 @@
 package com.example.myvhc.admin.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.view.View
+import androidx.fragment.app.FragmentActivity
+import com.bumptech.glide.Glide
 import com.example.myvhc.R
 import com.example.myvhc.admin.DashboardAdminActivity
 import com.example.myvhc.admin.bottom_sheet.UpdateVehicleSheetFragment
+import com.example.myvhc.admin.fragment.AdminVehicleFragment
 import com.example.myvhc.authActivity.LogInActivity
 import com.example.myvhc.databinding.ActivityAdminVehicleDetailBinding
 import com.example.myvhc.models.Vehicle
@@ -78,6 +82,7 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
             txtVehicleBrand.text = vehicle.vehicleBrand
             txtVehicleModel.text = vehicle.vehicleModel
 //            txtVehicleImg.text = vehicle.vehicleImg
+            Glide.with(applicationContext).load(vehicle.vehicleImg).into(binding.imageVehicle)
             txtVehicleChassisNum.text = vehicle.vehicleChassisNum
             txtCylinderCapacity.text = vehicle.vehicleCylinderCap
             txtVehiclePrice.text = vehicle.vehiclePrice
