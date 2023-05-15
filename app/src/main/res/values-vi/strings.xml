@@ -25,7 +25,7 @@
     <string name="your_location">Vị trí của bạn</string>
     <string name="motorbike_agency_dealer">Đại Lý Xe máy</string>
     <string name="car_agency_dealer">Đại Lý Ôtô</string>
-    <string name="cylinder_capacity">Công suất xi lanh</string>
+    <string name="cyclinder_capacity">Công suất xi lanh</string>
     <string name="frame_number">Số khung</string>
     <string name="warranty_infomation">Thông tin bảo hành</string>
     <string name="order_for_service">Đặt dịch vụ</string>
@@ -103,8 +103,4 @@
     <string name="vehicle_id">Mã xe</string>
     <string name="creation_date">Ngày tạo</string>
     <string name="describe">Mô tả</string>
-    <string name="booked_date">Ngày đã đặt</string>
-    <string name="status">Trạng thái</string>
-    <string name="booked_hour">Giờ đã đặt</string>
-    <string name="image">Hình ảnh</string>
 </resources>

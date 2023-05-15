@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,21 +40,22 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bodyLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingHorizontal="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerLayout">
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/tableLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            app:cardCornerRadius="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="20dp">
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
@@ -66,87 +68,68 @@
                     <TableRow>
 
                         <TextView
-                            android:background="@color/background_2"
-                            android:padding="10dp"
                             android:text="@string/brand"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:background="@color/background_2"
+                            android:padding="10dp" />
 
                         <TextView
                             android:id="@+id/txtVehicleBrand"
-                            android:padding="10dp"
-                            android:text="@string/car" />
+                            android:text="Ngày sinh"
+                            android:padding="10dp" />
 
                     </TableRow>
 
                     <TableRow>
-
                         <TextView
-                            android:background="@color/background_2"
-                            android:padding="10dp"
-                            android:text="@string/model"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/txtVehicleModel"
-                            android:padding="10dp"
-                            android:text="@string/car" />
-                    </TableRow>
-
-                    <TableRow>
-
-                        <TextView
-                            android:background="@color/background_2"
-                            android:padding="10dp"
-                            android:text="@string/image"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/txtVehicleImg"
-                            android:padding="10dp"
-                            android:text="@string/car" />
-                    </TableRow>
-
-                    <TableRow>
-
-                        <TextView
-                            android:background="@color/background_2"
-                            android:padding="10dp"
                             android:text="@string/chassis_number"
-                            android:textStyle="bold" />
+                            android:padding="10dp"
+                            android:background="@color/background_2"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/txtVehicleChassisNum"
-                            android:padding="10dp"
-                            android:text="@string/car" />
+                            android:text="01/01/2000"
+                            android:padding="10dp" />
                     </TableRow>
 
                     <TableRow>
-
                         <TextView
-                            android:background="@color/background_2"
+                            android:text="@string/cyclinder_capacity"
                             android:padding="10dp"
-                            android:text="@string/cylinder_capacity"
-                            android:textStyle="bold" />
+                            android:background="@color/background_2"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/txtCylinderCapacity"
-                            android:padding="10dp"
-                            android:text="@string/car" />
+                            android:text="01/01/2000"
+                            android:padding="10dp" />
                     </TableRow>
 
-
                     <TableRow>
+                        <TextView
+                            android:text="@string/motor_model"
+                            android:padding="10dp"
+                            android:background="@color/background_2"
+                            android:textStyle="bold"/>
 
                         <TextView
-                            android:background="@color/background_2"
-                            android:padding="10dp"
+                            android:id="@+id/txtVehicleModel"
+                            android:text="01/01/2000"
+                            android:padding="10dp" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
                             android:text="@string/price"
-                            android:textStyle="bold" />
+                            android:padding="10dp"
+                            android:background="@color/background_2"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/txtVehiclePrice"
-                            android:padding="10dp"
-                            android:text="@string/car" />
+                            android:text="01/01/2000"
+                            android:padding="10dp" />
                     </TableRow>
 
                 </TableLayout>
@@ -155,33 +138,61 @@
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/civic_type_r"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/btnExpand"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_expand"
+            app:layout_constraintTop_toBottomOf="@id/imageVehicle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            app:tint="@color/icon_color" />
+
         <TextView
             android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_rectangle_invisible"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="10dp"
             android:text="@string/update"
             android:textSize="16sp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/button_rectangle_invisible"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toStartOf="@+id/btnDelete"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tableLayout" />
+            app:layout_constraintTop_toBottomOf="@id/btnExpand"/>
 
         <TextView
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_rectangle_invisible"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="10dp"
             android:text="@string/delete"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/button_rectangle_invisible"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toEndOf="@id/btnUpdate"
-            app:layout_constraintTop_toBottomOf="@id/tableLayout" />
+            app:layout_constraintTop_toBottomOf="@id/btnExpand"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,6 +3,9 @@ package com.example.myvhc.admin.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
+import android.view.View
 import com.example.myvhc.R
 import com.example.myvhc.admin.DashboardAdminActivity
 import com.example.myvhc.admin.bottom_sheet.UpdateVehicleSheetFragment
@@ -46,6 +49,19 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             onBackPressed()
         }
+
+        binding.btnExpand.setOnClickListener {
+            if (binding.imageVehicle.visibility == View.GONE) {
+                TransitionManager.beginDelayedTransition(binding.bodyLayout, AutoTransition())
+                binding.imageVehicle.visibility = View.VISIBLE
+                binding.btnExpand.setImageResource(R.drawable.ic_expand)
+            } else {
+                TransitionManager.beginDelayedTransition(binding.bodyLayout, AutoTransition())
+                binding.imageVehicle.visibility = View.GONE
+                binding.btnExpand.setImageResource(R.drawable.ic_collapse)
+            }
+        }
+
     }
 
     private fun deleteVehicle(vehicleChassisNum: String) {
@@ -61,7 +77,7 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         with(binding) {
             txtVehicleBrand.text = vehicle.vehicleBrand
             txtVehicleModel.text = vehicle.vehicleModel
-            txtVehicleImg.text = vehicle.vehicleImg
+//            txtVehicleImg.text = vehicle.vehicleImg
             txtVehicleChassisNum.text = vehicle.vehicleChassisNum
             txtCylinderCapacity.text = vehicle.vehicleCylinderCap
             txtVehiclePrice.text = vehicle.vehiclePrice

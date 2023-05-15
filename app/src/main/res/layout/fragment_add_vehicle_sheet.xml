@@ -41,9 +41,10 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/vehicleCylinderCap"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/cylinder_capacity">
+            android:hint="@string/cyclinder_capacity">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -92,6 +93,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/vehiclePrice"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/price">
