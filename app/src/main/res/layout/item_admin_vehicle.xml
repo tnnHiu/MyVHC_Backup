@@ -24,7 +24,7 @@
             android:id="@+id/vehicleChassisNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="xe02"
+            android:text="@string/car"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
