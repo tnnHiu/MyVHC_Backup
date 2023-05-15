@@ -21,23 +21,13 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         binding = ActivityAdminVehicleDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        val getIntent = intent
-        val bundle = getIntent.extras
-        val vData = bundle?.getParcelable<Vehicle>("vData")
-        if (vData != null) {
-            binding.txtVehicleBrand.text = vData.vehicleBrand.toString()
-            binding.txtVehicleModel.text = vData.vehicleModel.toString()
-            binding.txtVehicleImg.text = vData.vehicleImg.toString()
-//            Glide.with(this).load(vData.vehicleImg).into(binding.txtVehicleImg)
-            binding.txtVehicleChassisNum.text = vData.vehicleChassisNum.toString()
-            binding.txtCylinderCapacity.text = vData.vehicleCylinderCap.toString()
-            binding.txtVehiclePrice.text = vData.vehiclePrice.toString()
+        val vData = intent.getParcelableExtra<Vehicle>("vData")
+        vData?.let {
+            displayVehicleData(it)
         }
 
-
         binding.btnUpdate.setOnClickListener {
-            UpdateVehicleSheetFragment().show(supportFragmentManager, "newTaskTag")
+            showUpdateVehicleSheetFragment()
         }
         binding.btnLogout.setOnClickListener {
             signOut()
@@ -46,9 +36,23 @@ class AdminVehicleDetailActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             onBackPressed()
         }
-
     }
 
+    private fun displayVehicleData(vehicle: Vehicle) {
+        with(binding) {
+            txtVehicleBrand.text = vehicle.vehicleBrand
+            txtVehicleModel.text = vehicle.vehicleModel
+            txtVehicleImg.text = vehicle.vehicleImg
+//            Glide.with(this).load(vehicle.vehicleImg).into(txtVehicleImg)
+            txtVehicleChassisNum.text = vehicle.vehicleChassisNum
+            txtCylinderCapacity.text = vehicle.vehicleCylinderCap
+            txtVehiclePrice.text = vehicle.vehiclePrice
+        }
+    }
+
+    private fun showUpdateVehicleSheetFragment() {
+        UpdateVehicleSheetFragment().show(supportFragmentManager, "newTaskTag")
+    }
 
     private fun signOut() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
