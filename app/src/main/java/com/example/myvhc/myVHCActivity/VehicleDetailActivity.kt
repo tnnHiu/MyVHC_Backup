@@ -71,7 +71,6 @@ class VehicleDetailActivity : AppCompatActivity() {
     ) {
         val recyclerView = binding.rvHistoryRepair
         recyclerView.layoutManager = LinearLayoutManager(this)
-        Log.d("aaaa", data.toString())
         recyclerView.adapter = RepairHistoryAdapter(data)
     }
 

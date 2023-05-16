@@ -11,7 +11,7 @@ data class ServiceBookingForm(
     var serviceDate: String? = null,
     var serviceHours: String? = null,
     var describe: String? = null,
-    val status: String? = null
+    var status: String? = null
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),

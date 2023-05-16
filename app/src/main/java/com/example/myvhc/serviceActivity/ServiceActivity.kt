@@ -132,10 +132,12 @@ class ServiceActivity : AppCompatActivity() {
     }
 
     private fun orderService(serviceBookingForm: ServiceBookingForm) {
-        dbRef.child(dbRef.push().key!!).setValue(serviceBookingForm).addOnCompleteListener {
-            startActivity(Intent(this, MainActivity::class.java))
-            Toast.makeText(applicationContext, "Complete", Toast.LENGTH_SHORT).show()
+        serviceBookingForm.customerId?.let {
+            dbRef.child(it).setValue(serviceBookingForm).addOnCompleteListener {
+                startActivity(Intent(this, MainActivity::class.java))
+                Toast.makeText(applicationContext, "Complete", Toast.LENGTH_SHORT).show()
 
+            }
         }
     }
 

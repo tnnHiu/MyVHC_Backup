@@ -74,32 +74,31 @@ class UpdateAgencySheetFragment : BottomSheetDialogFragment() {
 
             }
 
+
+            return binding.root
         }
 
-        return binding.root
-    }
+        private fun updateAgency(
+            agencyAddress: String,
+            agencyLatitude: String,
+            agencyLongitude: String,
+            agencyName: String,
+            agencyPhoneNum: String,
+            agencyWorkTime: String
+        ) {
+            val dbRef = FirebaseDatabase.getInstance().getReference("agencies").child(agencyId)
+            val agency = Agency(
+                agencyId,
+                agencyName,
+                "1",
+                agencyPhoneNum,
+                agencyAddress,
+                agencyLatitude.toDouble(),
+                agencyLongitude.toDouble(),
+                agencyWorkTime
+            )
+            dbRef.setValue(agency)
+        }
 
-    private fun updateAgency(
-        agencyAddress: String,
-        agencyLatitude: String,
-        agencyLongitude: String,
-        agencyName: String,
-        agencyPhoneNum: String,
-        agencyWorkTime: String
-    ) {
-        val dbRef = FirebaseDatabase.getInstance().getReference("agencies").child(agencyId)
-        val agency = Agency(
-            agencyId,
-            agencyName,
-            "1",
-            agencyPhoneNum,
-            agencyAddress,
-            agencyLatitude.toDouble(),
-            agencyLongitude.toDouble(),
-            agencyWorkTime
-        )
-        dbRef.setValue(agency)
+        private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
     }
-
-    private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
-}
