@@ -19,26 +19,16 @@ class AddVehicleSheetFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentAddVehicleSheetBinding
     private var dbRef = FirebaseDatabase.getInstance().getReference("vehicles")
-    private lateinit var vehicleVM: VehicleViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentAddVehicleSheetBinding.inflate(layoutInflater, container, false)
-
-        vehicleVM = ViewModelProvider(this)[VehicleViewModel::class.java]
-        vehicleVM.vListSize.observe(viewLifecycleOwner, Observer {
-            val vData = vehicleVM.vList.value.orEmpty()
-            addVehicle(vData)
-        })
-
+        addVehicle()
         return binding.root
-
-
-
     }
 
-    private fun addVehicle(vData: List<Vehicle>) {
+    private fun addVehicle() {
         binding.saveButton.setOnClickListener {
             if (!isInputValid()) return@setOnClickListener
 
