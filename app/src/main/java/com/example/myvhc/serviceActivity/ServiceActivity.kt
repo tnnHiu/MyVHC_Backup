@@ -113,15 +113,8 @@ class ServiceActivity : AppCompatActivity() {
                 binding.txtTime.text = formattedTime
             }, startHour, startMinute, false).show()
         }
-
-        binding.btnAddPicture.setOnClickListener {
-            binding.imgDetail.visibility = View.VISIBLE
-            binding.btnAddPicture.visibility = View.GONE
-        }
-
-        binding.imgDetail.setOnClickListener {
-            binding.btnAddPicture.visibility = View.VISIBLE
-            binding.imgDetail.visibility = View.GONE
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
         }
     }
 

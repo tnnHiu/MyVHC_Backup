@@ -14,11 +14,13 @@ import com.example.myvhc.models.Vehicle
 import com.example.myvhc.viewmodels.VehicleViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 
 class AddVehicleSheetFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentAddVehicleSheetBinding
     private var dbRef = FirebaseDatabase.getInstance().getReference("vehicles")
+    private var fireStorage = FirebaseStorage.getInstance().getReference("ImgMotorBike")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
