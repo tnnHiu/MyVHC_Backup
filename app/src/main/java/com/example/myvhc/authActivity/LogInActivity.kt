@@ -92,7 +92,7 @@ class LogInActivity : AppCompatActivity() {
 
 //trinhnguyennhathieu@gmail.com
 //        antoannguyen66@gmail.com
-        if (user?.email == "trinhnguyennhathieu@gmail.com") {
+        if (user?.email == "antoannguyen66@gmail.com") {
             val intent = Intent(applicationContext, DashboardAdminActivity::class.java)
             startActivity(intent)
             finish()
