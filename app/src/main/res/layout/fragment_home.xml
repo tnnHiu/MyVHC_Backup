@@ -46,7 +46,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="12dp"
                     android:gravity="center"
-                    android:text="Vui lòng thêm xe của bạn"
+                    android:text="@string/please_add_your_car"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -60,7 +60,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="40dp"
                     android:gravity="center"
-                    android:text="Thêm số khung của bạn - VIN để xem thông tin bảo hành, thông bảo trì, nhắc nhở lịch bảo trì và thông tin bảo hiểm"
+                    android:text="@string/add_your_chassis_number_vin_to_view_vehicle_details"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -84,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
-                    android:text="Đại lý gần đây"
+                    android:text="@string/agency_list"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
 

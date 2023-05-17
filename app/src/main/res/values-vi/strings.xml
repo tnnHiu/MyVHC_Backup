@@ -106,4 +106,7 @@
     <string name="booked_hour">Giờ đã đặt</string>
     <string name="booked_date">Ngày đã đặt</string>
     <string name="status">Trạng thái</string>
+    <string name="agency_list">Danh sách đại lý</string>
+    <string name="please_add_your_car">Hãy thêm xe của bạn</string>
+    <string name="add_your_chassis_number_vin_to_view_vehicle_details">Thêm số khung của bạn - VIN để xem thông tin chi tiết của xe.</string>
 </resources>

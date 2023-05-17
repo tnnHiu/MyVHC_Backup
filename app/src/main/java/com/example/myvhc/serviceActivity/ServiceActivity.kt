@@ -113,15 +113,8 @@ class ServiceActivity : AppCompatActivity() {
                 binding.txtTime.text = formattedTime
             }, startHour, startMinute, false).show()
         }
-
-        binding.btnAddPicture.setOnClickListener {
-            binding.imgDetail.visibility = View.VISIBLE
-            binding.btnAddPicture.visibility = View.GONE
-        }
-
-        binding.imgDetail.setOnClickListener {
-            binding.btnAddPicture.visibility = View.VISIBLE
-            binding.imgDetail.visibility = View.GONE
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
         }
     }
 
@@ -132,10 +125,12 @@ class ServiceActivity : AppCompatActivity() {
     }
 
     private fun orderService(serviceBookingForm: ServiceBookingForm) {
-        dbRef.child(dbRef.push().key!!).setValue(serviceBookingForm).addOnCompleteListener {
-            startActivity(Intent(this, MainActivity::class.java))
-            Toast.makeText(applicationContext, "Complete", Toast.LENGTH_SHORT).show()
+        serviceBookingForm.customerId?.let {
+            dbRef.child(it).setValue(serviceBookingForm).addOnCompleteListener {
+                startActivity(Intent(this, MainActivity::class.java))
+                Toast.makeText(applicationContext, "Complete", Toast.LENGTH_SHORT).show()
 
+            }
         }
     }
 

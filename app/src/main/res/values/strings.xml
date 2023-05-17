@@ -109,5 +109,8 @@
     <string name="booked_hour">Booked Hour</string>
     <string name="booked_date">Booked Date</string>
     <string name="status">Status</string>
+    <string name="agency_list">Agency List</string>
+    <string name="please_add_your_car">Please add your car</string>
+    <string name="add_your_chassis_number_vin_to_view_vehicle_details">Add your chassis number - VIN to view vehicle details.</string>
 
 </resources>

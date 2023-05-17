@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myvhc.R
 import com.example.myvhc.admin.bottom_sheet.UpdateServiceSheetFragment
-import com.example.myvhc.admin.bottom_sheet.UpdateVehicleSheetFragment
 import com.example.myvhc.authActivity.LogInActivity
 import com.example.myvhc.databinding.ActivityAdminServiceDetailBinding
+import com.example.myvhc.models.ServiceBookingForm
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
@@ -20,8 +20,19 @@ class AdminServiceDetailActivity : AppCompatActivity() {
         binding = ActivityAdminServiceDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val sbfData = intent.getParcelableExtra<ServiceBookingForm>("sbfData")
+        val sbfDataUpdate = intent.getParcelableExtra<ServiceBookingForm>("sbfDataUpdate")
+        if (sbfDataUpdate != null) {
+            displaySBFData(sbfDataUpdate)
+            intent.removeExtra("sbfDataUpdate")
+        } else {
+            if (sbfData != null) {
+                displaySBFData(sbfData)
+            }
+        }
+
         binding.btnUpdate.setOnClickListener {
-            UpdateServiceSheetFragment().show(supportFragmentManager, "newTaskTag")
+            showUpdateSBFSheetFragment(sbfData)
         }
 
         binding.btnLogout.setOnClickListener {
@@ -33,6 +44,30 @@ class AdminServiceDetailActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun displaySBFData(sbf: ServiceBookingForm) {
+        with(binding) {
+            txtAgencyId.text = sbf.agencyId
+            txtCreationDate.text = sbf.creationDate
+            txtCustomerId.text = sbf.customerId
+            txtDescribe.text = sbf.describe
+            txtBookedDate.text = sbf.serviceDate
+            txtBookedHours.text = sbf.serviceHours
+            txtStatus.text = sbf.status
+            txtVehicleId.text = sbf.vehicleId
+        }
+    }
+
+    private fun showUpdateSBFSheetFragment(sbfData: ServiceBookingForm?) {
+        val bundle = Bundle().apply {
+            putParcelable("sbfData", sbfData)
+        }
+        val fragment = UpdateServiceSheetFragment().apply {
+            arguments = bundle
+        }
+        fragment.show(supportFragmentManager, "newTaskTag")
+    }
+
 
     private fun signOut() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

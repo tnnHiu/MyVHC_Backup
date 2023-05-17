@@ -10,88 +10,72 @@
         android:id="@+id/agencyCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:cardCornerRadius="10sp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8sp">
+
+        <LinearLayout
+            android:id="@+id/layoutHead"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8sp">
-
-            <LinearLayout
-                android:id="@+id/layoutHead"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/layoutDistance"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/agencyName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/agency"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
-
-            </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutDistance"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="46dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layoutHead">
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/layoutDistance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/btnOrderService"
-                android:layout_width="wrap_content"
+                android:id="@+id/agencyName"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="4sp"
-                android:background="@drawable/button_rectangle"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:padding="4dp"
-                android:text="@string/detail_and_order_for_service"
-                android:textColor="@color/white"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layoutDistance"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/agencyAddress"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="28dp"
                 android:text="@string/agency"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 tools:ignore="SmallSp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
+        </LinearLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDistance"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="46dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutHead">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/btnOrderService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4sp"
+        android:background="@drawable/button_rectangle"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="@string/detail_and_order_for_service"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDistance"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>

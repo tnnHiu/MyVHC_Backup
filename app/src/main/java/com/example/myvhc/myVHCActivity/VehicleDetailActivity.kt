@@ -3,12 +3,10 @@ package com.example.myvhc.myVHCActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.myvhc.AgencyMapsActivity
 import com.example.myvhc.adapter.RepairHistoryAdapter
 import com.example.myvhc.databinding.ActivityVehicleDetailBinding
 import com.example.myvhc.models.Agency
@@ -16,7 +14,6 @@ import com.example.myvhc.models.CustomerVehicle
 import com.example.myvhc.models.ServiceBookingForm
 import com.example.myvhc.models.Vehicle
 import com.example.myvhc.viewmodels.RepairHistoryViewModel
-import kotlin.math.log
 
 class VehicleDetailActivity : AppCompatActivity() {
 
@@ -71,7 +68,6 @@ class VehicleDetailActivity : AppCompatActivity() {
     ) {
         val recyclerView = binding.rvHistoryRepair
         recyclerView.layoutManager = LinearLayoutManager(this)
-        Log.d("aaaa", data.toString())
         recyclerView.adapter = RepairHistoryAdapter(data)
     }
 

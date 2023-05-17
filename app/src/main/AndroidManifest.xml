@@ -73,7 +73,7 @@
             android:value="AIzaSyATAp5-HRHFEsQDbSohtrfh81Dlq84Yw-E" />
 
         <activity
-            android:name=".AgencyMapsActivity"
+            android:name=".myVHCActivity.AgencyMapsActivity"
             android:exported="false" />
         <activity
             android:name=".drawerActivity.GuaranActivity"

@@ -1,26 +1,32 @@
 package com.example.myvhc.adapter
 
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myvhc.databinding.FragmentHomeBinding
+import com.example.myvhc.databinding.ItemAdminAgencyBinding
 import com.example.myvhc.models.Agency
-import com.example.myvhc.models.CustomerVehicle
 
 
-class AdapterHomeAgency(private val customerVehicleList: ArrayList<CustomerVehicle>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        TODO("Not yet implemented")
+class AdapterHomeAgency(private val agencyList: ArrayList<Agency>) :
+    RecyclerView.Adapter<AdapterHomeAgency.ViewHolder>() {
+    inner class ViewHolder(var binding: ItemAdminAgencyBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = ItemAdminAgencyBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        )
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return agencyList.size
+    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.binding.agencyId.text = agencyList[position].agencyName.toString()
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
-    }
 
-    class ViewHolder(var binding: FragmentHomeBinding) : RecyclerView.ViewHolder(binding.root) {}
 }
