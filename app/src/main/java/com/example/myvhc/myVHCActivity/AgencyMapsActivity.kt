@@ -1,4 +1,4 @@
-package com.example.myvhc
+package com.example.myvhc.myVHCActivity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -12,18 +12,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.ListFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.myvhc.R
 import com.example.myvhc.databinding.ActivityAgencyMapsBinding
-import com.example.myvhc.databinding.ActivityMainBinding
 import com.example.myvhc.models.Agency
 import com.example.myvhc.models.CustomerVehicle
 import com.example.myvhc.models.Vehicle
-import com.example.myvhc.myVHCActivity.ListVehicleActivity
-import com.example.myvhc.myVHCActivity.VehicleDetailActivity
 import com.example.myvhc.serviceActivity.AgencyDetailActivity
-import com.example.myvhc.serviceActivity.ServiceActivity
 import com.example.myvhc.viewmodels.AgencyViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -44,49 +40,55 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var agencyViewModel: AgencyViewModel
     private lateinit var agencyList: ArrayList<Agency>
     private val permissionCode = 101
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Khởi tạo và gán layout binding
         binding = ActivityAgencyMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Khởi tạo fusedLocationProviderClient để lấy vị trí hiện tại
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-
-        // --------------------
+        // Lấy vị trí hiện tại và cập nhật lên bản đồ
         getCurrentLocation()
-        // --------------------
+
+        // Đăng ký sự kiện click nút Back
         binding.btnBack.setOnClickListener {
             onBackPressed()
         }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-//        val latLng = LatLng(currentLocation.latitude, currentLocation.longitude)
-        val latLng = LatLng(15.975893731284755, 108.25232971660927)
+        // Thiết lập vị trí hiện tại trên bản đồ và đánh dấu
+        val latLng = LatLng(currentLocation.latitude, currentLocation.longitude)
+//        val latLng = LatLng(15.975893731284755, 108.25232971660927)
         val markerOptions =
             MarkerOptions().position(latLng).title(getString(R.string.your_location))
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng))
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
         googleMap.addMarker(markerOptions)
-        getNearbyAgency(latLng, googleMap)
 
+        // Lấy danh sách các cửa hàng gần và đánh dấu trên bản đồ
+        getNearbyAgency(latLng, googleMap)
     }
 
+    // Tạo view chứa thông tin cửa hàng
 
     @SuppressLint("InflateParams")
-    private fun createAgencyView(agencyName: String, agencyAddress: String): BitmapDescriptor {
+    private fun createAgencyView(agencyName: String): BitmapDescriptor {
         val marker = (getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(
             R.layout.title_maps, null
         )
         val txtAgencyName = marker.findViewById<TextView>(R.id.agencyName)
-        val txtAgencyAddress = marker.findViewById<TextView>(R.id.agencyAddress)
         txtAgencyName.text = agencyName
         val bitmap =
             Bitmap.createScaledBitmap(viewToBitmap(marker)!!, marker.width, marker.height, false)
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
 
+    // Chuyển view thành hình ảnh bitmap
     private fun viewToBitmap(view: View): Bitmap? {
         view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
         val bitmap =
@@ -97,8 +99,9 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         return bitmap
     }
 
-
+    // Lấy danh sách cửa hàng gần và đánh dấu trên bản đồ
     private fun getNearbyAgency(currentLatLng: LatLng, googleMap: GoogleMap) {
+        // Khởi tạo ViewModel và quan sát danh sách cửa hàng
         agencyViewModel = ViewModelProvider(this)[AgencyViewModel::class.java]
         agencyViewModel.agencyListSize.observe(this, Observer {
             agencyList = agencyViewModel.agencyList.value!!
@@ -109,10 +112,11 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     val agencyLatLng = LatLng(agencyLat, agencyLng)
                     if (getDistance(currentLatLng, agencyLatLng) <= 10000) {
                         if (agency.agencyName != null && agency.agencyAddress != null) {
-                            val icon = createAgencyView(agency.agencyName!!, agency.agencyAddress!!)
-                            googleMap.addMarker(
-                                MarkerOptions().position(agencyLatLng).icon(icon)
-                            )
+                            // Tạo marker tương ứng với cửa hàng và thêm vào bản đồ
+                            val icon = createAgencyView(agency.agencyName!!)
+                            googleMap.addMarker(MarkerOptions().position(agencyLatLng).icon(icon))
+
+                            // Đăng ký sự kiện click marker để chuyển tới trang chi tiết cửa hàng
                             val getIntent = intent
                             val bundle = getIntent.extras
                             val cvData = bundle?.getParcelable<CustomerVehicle>("cvData")
@@ -135,7 +139,6 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                 )
                                 intent.putExtras(bundleAgencyMapsActivity)
                                 startActivity(intent)
-
                                 return@setOnMarkerClickListener true
                             }
                         }
@@ -145,7 +148,7 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         })
     }
 
-    // get current location --------------------------------------------------------------start
+    // Lấy vị trí hiện tại của thiết bị
     private fun getCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(
                 this, android.Manifest.permission.ACCESS_FINE_LOCATION
@@ -167,9 +170,8 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
-// get current location --------------------------------------------------------------end
 
-    // Cấp quyền truy cập ------------------------------------------------------------------------
+    // Xử lý kết quả yêu cầu cấp quyền truy cập vị trí
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<out String>, grantResults: IntArray
     ) {
@@ -181,7 +183,7 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    // Tính khoảng cách giữa vị trí hiện tại với các cửa hàng trong bán kinh cho trước
+    // Tính khoảng cách giữa hai điểm trên bản đồ
     private fun getDistance(latLng1: LatLng, latLng2: LatLng): Float {
         val results = FloatArray(1)
         Location.distanceBetween(
@@ -190,4 +192,5 @@ class AgencyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         return results[0]
     }
 }
+
 

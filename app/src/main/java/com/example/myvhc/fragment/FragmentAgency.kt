@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.myvhc.AgencyMapsActivity
+import com.example.myvhc.myVHCActivity.AgencyMapsActivity
 import com.example.myvhc.databinding.FragmentAgencyBinding
 
 
